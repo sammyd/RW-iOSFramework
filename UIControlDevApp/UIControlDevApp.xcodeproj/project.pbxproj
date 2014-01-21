@@ -21,6 +21,7 @@
 		22B262A5188F31370007D0D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B26287188F31370007D0D4 /* UIKit.framework */; };
 		22B262AD188F31370007D0D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22B262AB188F31370007D0D4 /* InfoPlist.strings */; };
 		22B262AF188F31370007D0D4 /* UIControlDevAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B262AE188F31370007D0D4 /* UIControlDevAppTests.m */; };
+		22B262CC188F32A20007D0D4 /* libRWUIControls.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B262C7188F323C0007D0D4 /* libRWUIControls.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +31,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = 22B2627F188F31370007D0D4;
 			remoteInfo = UIControlDevApp;
+		};
+		22B262C6188F323C0007D0D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22B262C1188F323C0007D0D4 /* RWUIControls.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 22B261FC188F29750007D0D4;
+			remoteInfo = RWUIControls;
+		};
+		22B262C8188F323C0007D0D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22B262C1188F323C0007D0D4 /* RWUIControls.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 22B2620C188F29750007D0D4;
+			remoteInfo = RWUIControlsTests;
+		};
+		22B262CA188F32890007D0D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22B262C1188F323C0007D0D4 /* RWUIControls.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 22B261FB188F29750007D0D4;
+			remoteInfo = RWUIControls;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -53,6 +75,7 @@
 		22B262AA188F31370007D0D4 /* UIControlDevAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UIControlDevAppTests-Info.plist"; sourceTree = "<group>"; };
 		22B262AC188F31370007D0D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		22B262AE188F31370007D0D4 /* UIControlDevAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIControlDevAppTests.m; sourceTree = "<group>"; };
+		22B262C1188F323C0007D0D4 /* RWUIControls.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RWUIControls.xcodeproj; path = ../RWUIControls/RWUIControls.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22B262CC188F32A20007D0D4 /* libRWUIControls.a in Frameworks */,
 				22B26286188F31370007D0D4 /* CoreGraphics.framework in Frameworks */,
 				22B26288188F31370007D0D4 /* UIKit.framework in Frameworks */,
 				22B26284188F31370007D0D4 /* Foundation.framework in Frameworks */,
@@ -82,6 +106,7 @@
 		22B26277188F31370007D0D4 = {
 			isa = PBXGroup;
 			children = (
+				22B262C1188F323C0007D0D4 /* RWUIControls.xcodeproj */,
 				22B26289188F31370007D0D4 /* UIControlDevApp */,
 				22B262A8188F31370007D0D4 /* UIControlDevAppTests */,
 				22B26282188F31370007D0D4 /* Frameworks */,
@@ -152,6 +177,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		22B262C2188F323C0007D0D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22B262C7188F323C0007D0D4 /* libRWUIControls.a */,
+				22B262C9188F323C0007D0D4 /* RWUIControlsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,6 +200,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				22B262CB188F32890007D0D4 /* PBXTargetDependency */,
 			);
 			name = UIControlDevApp;
 			productName = UIControlDevApp;
@@ -216,6 +251,12 @@
 			mainGroup = 22B26277188F31370007D0D4;
 			productRefGroup = 22B26281188F31370007D0D4 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 22B262C2188F323C0007D0D4 /* Products */;
+					ProjectRef = 22B262C1188F323C0007D0D4 /* RWUIControls.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				22B2627F188F31370007D0D4 /* UIControlDevApp */,
@@ -223,6 +264,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		22B262C7188F323C0007D0D4 /* libRWUIControls.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRWUIControls.a;
+			remoteRef = 22B262C6188F323C0007D0D4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		22B262C9188F323C0007D0D4 /* RWUIControlsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RWUIControlsTests.xctest;
+			remoteRef = 22B262C8188F323C0007D0D4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		22B2627E188F31370007D0D4 /* Resources */ = {
@@ -271,6 +329,11 @@
 			isa = PBXTargetDependency;
 			target = 22B2627F188F31370007D0D4 /* UIControlDevApp */;
 			targetProxy = 22B262A6188F31370007D0D4 /* PBXContainerItemProxy */;
+		};
+		22B262CB188F32890007D0D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RWUIControls;
+			targetProxy = 22B262CA188F32890007D0D4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
