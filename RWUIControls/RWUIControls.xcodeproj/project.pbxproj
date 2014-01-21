@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		22B26200188F29750007D0D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B261FF188F29750007D0D4 /* Foundation.framework */; };
 		22B26205188F29750007D0D4 /* RWUIControls.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22B26204188F29750007D0D4 /* RWUIControls.h */; };
-		22B26207188F29750007D0D4 /* RWUIControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B26206188F29750007D0D4 /* RWUIControls.m */; };
 		22B2620E188F29750007D0D4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B2620D188F29750007D0D4 /* XCTest.framework */; };
 		22B2620F188F29750007D0D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B261FF188F29750007D0D4 /* Foundation.framework */; };
-		22B26211188F29750007D0D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B26210188F29750007D0D4 /* UIKit.framework */; };
 		22B26214188F29750007D0D4 /* libRWUIControls.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B261FC188F29750007D0D4 /* libRWUIControls.a */; };
 		22B2621A188F29750007D0D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22B26218188F29750007D0D4 /* InfoPlist.strings */; };
 		22B2621C188F29750007D0D4 /* RWUIControlsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B2621B188F29750007D0D4 /* RWUIControlsTests.m */; };
+		22B26226188F2A140007D0D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B26225188F2A140007D0D4 /* UIKit.framework */; };
+		22B26228188F2AB20007D0D4 /* RWUIControls.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B26204188F29750007D0D4 /* RWUIControls.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,13 +46,12 @@
 		22B261FF188F29750007D0D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22B26203188F29750007D0D4 /* RWUIControls-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RWUIControls-Prefix.pch"; sourceTree = "<group>"; };
 		22B26204188F29750007D0D4 /* RWUIControls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWUIControls.h; sourceTree = "<group>"; };
-		22B26206188F29750007D0D4 /* RWUIControls.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWUIControls.m; sourceTree = "<group>"; };
 		22B2620C188F29750007D0D4 /* RWUIControlsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RWUIControlsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B2620D188F29750007D0D4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		22B26210188F29750007D0D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		22B26217188F29750007D0D4 /* RWUIControlsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RWUIControlsTests-Info.plist"; sourceTree = "<group>"; };
 		22B26219188F29750007D0D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		22B2621B188F29750007D0D4 /* RWUIControlsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWUIControlsTests.m; sourceTree = "<group>"; };
+		22B26225188F2A140007D0D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22B26226188F2A140007D0D4 /* UIKit.framework in Frameworks */,
 				22B26200188F29750007D0D4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,7 +69,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				22B2620E188F29750007D0D4 /* XCTest.framework in Frameworks */,
-				22B26211188F29750007D0D4 /* UIKit.framework in Frameworks */,
 				22B26214188F29750007D0D4 /* libRWUIControls.a in Frameworks */,
 				22B2620F188F29750007D0D4 /* Foundation.framework in Frameworks */,
 			);
@@ -100,9 +99,9 @@
 		22B261FE188F29750007D0D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22B26225188F2A140007D0D4 /* UIKit.framework */,
 				22B261FF188F29750007D0D4 /* Foundation.framework */,
 				22B2620D188F29750007D0D4 /* XCTest.framework */,
-				22B26210188F29750007D0D4 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -111,7 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				22B26204188F29750007D0D4 /* RWUIControls.h */,
-				22B26206188F29750007D0D4 /* RWUIControls.m */,
 				22B26202188F29750007D0D4 /* Supporting Files */,
 			);
 			path = RWUIControls;
@@ -145,6 +143,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		22B26227188F2A950007D0D4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22B26228188F2AB20007D0D4 /* RWUIControls.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		22B261FB188F29750007D0D4 /* RWUIControls */ = {
 			isa = PBXNativeTarget;
@@ -153,6 +162,7 @@
 				22B261F8188F29750007D0D4 /* Sources */,
 				22B261F9188F29750007D0D4 /* Frameworks */,
 				22B261FA188F29750007D0D4 /* CopyFiles */,
+				22B26227188F2A950007D0D4 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -224,7 +234,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22B26207188F29750007D0D4 /* RWUIControls.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

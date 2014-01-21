@@ -7,7 +7,4 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface RWUIControls : NSObject
-
-@end
+#import <UIKit/UIKit.h>
