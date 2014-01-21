@@ -13,8 +13,6 @@
 		22B2628E188F31370007D0D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22B2628C188F31370007D0D4 /* InfoPlist.strings */; };
 		22B26290188F31370007D0D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B2628F188F31370007D0D4 /* main.m */; };
 		22B26294188F31370007D0D4 /* RWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B26293188F31370007D0D4 /* RWAppDelegate.m */; };
-		22B26297188F31370007D0D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B26295188F31370007D0D4 /* Main.storyboard */; };
-		22B2629A188F31370007D0D4 /* RWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B26299188F31370007D0D4 /* RWViewController.m */; };
 		22B2629C188F31370007D0D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B2629B188F31370007D0D4 /* Images.xcassets */; };
 		22B262A3188F31370007D0D4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B262A2188F31370007D0D4 /* XCTest.framework */; };
 		22B262A4188F31370007D0D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B26283188F31370007D0D4 /* Foundation.framework */; };
@@ -22,6 +20,8 @@
 		22B262AD188F31370007D0D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22B262AB188F31370007D0D4 /* InfoPlist.strings */; };
 		22B262AF188F31370007D0D4 /* UIControlDevAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B262AE188F31370007D0D4 /* UIControlDevAppTests.m */; };
 		22B262CC188F32A20007D0D4 /* libRWUIControls.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B262C7188F323C0007D0D4 /* libRWUIControls.a */; };
+		22B262CF188F33C00007D0D4 /* RWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B262CE188F33C00007D0D4 /* RWViewController.m */; };
+		22B262D1188F33CD0007D0D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B262D0188F33CD0007D0D4 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,9 +66,6 @@
 		22B26291188F31370007D0D4 /* UIControlDevApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControlDevApp-Prefix.pch"; sourceTree = "<group>"; };
 		22B26292188F31370007D0D4 /* RWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWAppDelegate.h; sourceTree = "<group>"; };
 		22B26293188F31370007D0D4 /* RWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWAppDelegate.m; sourceTree = "<group>"; };
-		22B26296188F31370007D0D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		22B26298188F31370007D0D4 /* RWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWViewController.h; sourceTree = "<group>"; };
-		22B26299188F31370007D0D4 /* RWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWViewController.m; sourceTree = "<group>"; };
 		22B2629B188F31370007D0D4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		22B262A1188F31370007D0D4 /* UIControlDevAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIControlDevAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B262A2188F31370007D0D4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -76,6 +73,9 @@
 		22B262AC188F31370007D0D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		22B262AE188F31370007D0D4 /* UIControlDevAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIControlDevAppTests.m; sourceTree = "<group>"; };
 		22B262C1188F323C0007D0D4 /* RWUIControls.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RWUIControls.xcodeproj; path = ../RWUIControls/RWUIControls.xcodeproj; sourceTree = "<group>"; };
+		22B262CD188F33C00007D0D4 /* RWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWViewController.h; sourceTree = "<group>"; };
+		22B262CE188F33C00007D0D4 /* RWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWViewController.m; sourceTree = "<group>"; };
+		22B262D0188F33CD0007D0D4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,11 +137,11 @@
 		22B26289188F31370007D0D4 /* UIControlDevApp */ = {
 			isa = PBXGroup;
 			children = (
+				22B262D0188F33CD0007D0D4 /* Main.storyboard */,
+				22B262CD188F33C00007D0D4 /* RWViewController.h */,
+				22B262CE188F33C00007D0D4 /* RWViewController.m */,
 				22B26292188F31370007D0D4 /* RWAppDelegate.h */,
 				22B26293188F31370007D0D4 /* RWAppDelegate.m */,
-				22B26295188F31370007D0D4 /* Main.storyboard */,
-				22B26298188F31370007D0D4 /* RWViewController.h */,
-				22B26299188F31370007D0D4 /* RWViewController.m */,
 				22B2629B188F31370007D0D4 /* Images.xcassets */,
 				22B2628A188F31370007D0D4 /* Supporting Files */,
 			);
@@ -287,9 +287,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22B262D1188F33CD0007D0D4 /* Main.storyboard in Resources */,
 				22B2629C188F31370007D0D4 /* Images.xcassets in Resources */,
 				22B2628E188F31370007D0D4 /* InfoPlist.strings in Resources */,
-				22B26297188F31370007D0D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22B26290188F31370007D0D4 /* main.m in Sources */,
-				22B2629A188F31370007D0D4 /* RWViewController.m in Sources */,
+				22B262CF188F33C00007D0D4 /* RWViewController.m in Sources */,
 				22B26294188F31370007D0D4 /* RWAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,14 +344,6 @@
 				22B2628D188F31370007D0D4 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		22B26295188F31370007D0D4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				22B26296188F31370007D0D4 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		22B262AB188F31370007D0D4 /* InfoPlist.strings */ = {
@@ -524,6 +516,7 @@
 				22B262B4188F31370007D0D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22B262B5188F31370007D0D4 /* Build configuration list for PBXNativeTarget "UIControlDevAppTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +525,7 @@
 				22B262B7188F31370007D0D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

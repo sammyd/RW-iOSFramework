@@ -10,4 +10,4 @@
 #import <UIKit/UIKit.h>
 
 // KnobControl
-#import "RWKnobControl.h"
+#import <RWUIControls/RWKnobControl.h>

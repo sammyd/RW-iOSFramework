@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		22B26200188F29750007D0D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B261FF188F29750007D0D4 /* Foundation.framework */; };
-		22B26205188F29750007D0D4 /* RWUIControls.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22B26204188F29750007D0D4 /* RWUIControls.h */; };
 		22B2620E188F29750007D0D4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B2620D188F29750007D0D4 /* XCTest.framework */; };
 		22B2620F188F29750007D0D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B261FF188F29750007D0D4 /* Foundation.framework */; };
 		22B26214188F29750007D0D4 /* libRWUIControls.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B261FC188F29750007D0D4 /* libRWUIControls.a */; };
@@ -22,6 +21,8 @@
 		22B26233188F2BD50007D0D4 /* RWKnobRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B2622D188F2BD50007D0D4 /* RWKnobRenderer.m */; };
 		22B26234188F2BD50007D0D4 /* RWRotationGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 22B2622E188F2BD50007D0D4 /* RWRotationGestureRecognizer.h */; };
 		22B26235188F2BD50007D0D4 /* RWRotationGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B2622F188F2BD50007D0D4 /* RWRotationGestureRecognizer.m */; };
+		22DB6CD4188F372A0017A414 /* RWUIControls.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22B26204188F29750007D0D4 /* RWUIControls.h */; };
+		22DB6CD5188F372A0017A414 /* RWKnobControl.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22B2622A188F2BD50007D0D4 /* RWKnobControl.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +42,8 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				22B26205188F29750007D0D4 /* RWUIControls.h in CopyFiles */,
+				22DB6CD4188F372A0017A414 /* RWUIControls.h in CopyFiles */,
+				22DB6CD5188F372A0017A414 /* RWKnobControl.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +458,7 @@
 				22B26221188F29750007D0D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22B26222188F29750007D0D4 /* Build configuration list for PBXNativeTarget "RWUIControlsTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +467,7 @@
 				22B26224188F29750007D0D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
