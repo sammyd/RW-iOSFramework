@@ -8,3 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+
+// KnobControl
+#import "RWKnobControl.h"
