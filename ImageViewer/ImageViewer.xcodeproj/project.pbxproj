@@ -21,6 +21,7 @@
 		22B26264188F30080007D0D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B26246188F30080007D0D4 /* UIKit.framework */; };
 		22B2626C188F30080007D0D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22B2626A188F30080007D0D4 /* InfoPlist.strings */; };
 		22B2626E188F30080007D0D4 /* ImageViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B2626D188F30080007D0D4 /* ImageViewerTests.m */; };
+		22F3A8DA1891CF360012391C /* RWUIControls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F3A8D91891CF360012391C /* RWUIControls.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		22B26269188F30080007D0D4 /* ImageViewerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImageViewerTests-Info.plist"; sourceTree = "<group>"; };
 		22B2626B188F30080007D0D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		22B2626D188F30080007D0D4 /* ImageViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageViewerTests.m; sourceTree = "<group>"; };
+		22F3A8D91891CF360012391C /* RWUIControls.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RWUIControls.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22B26245188F30080007D0D4 /* CoreGraphics.framework in Frameworks */,
+				22F3A8DA1891CF360012391C /* RWUIControls.framework in Frameworks */,
 				22B26247188F30080007D0D4 /* UIKit.framework in Frameworks */,
 				22B26243188F30080007D0D4 /* Foundation.framework in Frameworks */,
 			);
@@ -101,6 +104,7 @@
 		22B26241188F30080007D0D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22F3A8D91891CF360012391C /* RWUIControls.framework */,
 				22B26242188F30080007D0D4 /* Foundation.framework */,
 				22B26244188F30080007D0D4 /* CoreGraphics.framework */,
 				22B26246188F30080007D0D4 /* UIKit.framework */,
@@ -379,6 +383,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageViewer/ImageViewer-Prefix.pch";
 				INFOPLIST_FILE = "ImageViewer/ImageViewer-Info.plist";
@@ -392,6 +400,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageViewer/ImageViewer-Prefix.pch";
 				INFOPLIST_FILE = "ImageViewer/ImageViewer-Info.plist";
@@ -461,6 +473,7 @@
 				22B26273188F30080007D0D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22B26274188F30080007D0D4 /* Build configuration list for PBXNativeTarget "ImageViewerTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +482,7 @@
 				22B26276188F30080007D0D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
