@@ -11,3 +11,4 @@
 
 // KnobControl
 #import <RWUIControls/RWKnobControl.h>
+#import <RWUIControls/RWRibbonView.h>

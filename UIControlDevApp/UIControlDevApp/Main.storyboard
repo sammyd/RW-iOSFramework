@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -62,6 +62,11 @@
                                     <action selector="handleRandomButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GS0-td-GEp"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g3H-LL-wf6">
+                                <rect key="frame" x="157" y="327" width="133" height="133"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -84,6 +89,7 @@
                     <connections>
                         <outlet property="animateSwitch" destination="TaL-xC-fDb" id="ebs-jP-Ynf"/>
                         <outlet property="knobPlaceholder" destination="i5W-dd-2NC" id="9tc-xF-obr"/>
+                        <outlet property="ribbonViewContainer" destination="g3H-LL-wf6" id="Krs-aC-9Jb"/>
                         <outlet property="valueLabel" destination="2dS-eb-kbR" id="1Qh-H3-7ED"/>
                         <outlet property="valueSlider" destination="v5K-hK-rjH" id="pTM-hJ-Etg"/>
                     </connections>

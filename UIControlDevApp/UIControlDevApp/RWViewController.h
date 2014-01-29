@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *valueLabel;
 @property (weak, nonatomic) IBOutlet UISlider *valueSlider;
 @property (weak, nonatomic) IBOutlet UISwitch *animateSwitch;
+@property (weak, nonatomic) IBOutlet UIView *ribbonViewContainer;
 
 - (IBAction)handleValueChanged:(id)sender;
 - (IBAction)handleRandomButtonPressed:(id)sender;
