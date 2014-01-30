@@ -14,6 +14,7 @@
 				22F3A8D31891C2910012391C /* Build Other Platform */,
 			);
 			dependencies = (
+				228739A71899C41E00A88A1F /* PBXTargetDependency */,
 				22F3A8D21891C2230012391C /* PBXTargetDependency */,
 			);
 			name = Framework;
@@ -22,6 +23,10 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		228739991899C29300A88A1F /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 228739981899C29300A88A1F /* CoreFoundation.framework */; };
+		2287399F1899C29300A88A1F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2287399D1899C29300A88A1F /* InfoPlist.strings */; };
+		228739A41899C3CF00A88A1F /* RWRibbon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2287398E1899BAFC00A88A1F /* RWRibbon@2x.png */; };
+		228739A51899C3D300A88A1F /* RWRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2287398D1899B9FB00A88A1F /* RWRibbon.png */; };
 		22B26200188F29750007D0D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B261FF188F29750007D0D4 /* Foundation.framework */; };
 		22B2620E188F29750007D0D4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B2620D188F29750007D0D4 /* XCTest.framework */; };
 		22B2620F188F29750007D0D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B261FF188F29750007D0D4 /* Foundation.framework */; };
@@ -43,6 +48,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		228739A61899C41E00A88A1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22B261F4188F29750007D0D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 228739961899C29300A88A1F;
+			remoteInfo = RWUIControlsResources;
+		};
 		22B26212188F29750007D0D4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 22B261F4188F29750007D0D4 /* Project object */;
@@ -76,6 +88,11 @@
 /* Begin PBXFileReference section */
 		2287398D1899B9FB00A88A1F /* RWRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RWRibbon.png; sourceTree = "<group>"; };
 		2287398E1899BAFC00A88A1F /* RWRibbon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RWRibbon@2x.png"; sourceTree = "<group>"; };
+		228739971899C29300A88A1F /* RWUIControls.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RWUIControls.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		228739981899C29300A88A1F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		2287399C1899C29300A88A1F /* RWUIControlsResources-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RWUIControlsResources-Info.plist"; sourceTree = "<group>"; };
+		2287399E1899C29300A88A1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		228739A01899C29300A88A1F /* RWUIControlsResources-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RWUIControlsResources-Prefix.pch"; sourceTree = "<group>"; };
 		22B261FC188F29750007D0D4 /* libRWUIControls.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRWUIControls.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B261FF188F29750007D0D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22B26203188F29750007D0D4 /* RWUIControls-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RWUIControls-Prefix.pch"; sourceTree = "<group>"; };
@@ -97,6 +114,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		228739941899C29300A88A1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				228739991899C29300A88A1F /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		22B261F9188F29750007D0D4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -119,11 +144,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2287399A1899C29300A88A1F /* RWUIControlsResources */ = {
+			isa = PBXGroup;
+			children = (
+				2287399B1899C29300A88A1F /* Supporting Files */,
+			);
+			path = RWUIControlsResources;
+			sourceTree = "<group>";
+		};
+		2287399B1899C29300A88A1F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2287399C1899C29300A88A1F /* RWUIControlsResources-Info.plist */,
+				2287399D1899C29300A88A1F /* InfoPlist.strings */,
+				228739A01899C29300A88A1F /* RWUIControlsResources-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		22B261F3188F29750007D0D4 = {
 			isa = PBXGroup;
 			children = (
 				22B26201188F29750007D0D4 /* RWUIControls */,
 				22B26215188F29750007D0D4 /* RWUIControlsTests */,
+				2287399A1899C29300A88A1F /* RWUIControlsResources */,
 				22B261FE188F29750007D0D4 /* Frameworks */,
 				22B261FD188F29750007D0D4 /* Products */,
 			);
@@ -134,6 +178,7 @@
 			children = (
 				22B261FC188F29750007D0D4 /* libRWUIControls.a */,
 				22B2620C188F29750007D0D4 /* RWUIControlsTests.xctest */,
+				228739971899C29300A88A1F /* RWUIControls.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,6 +189,7 @@
 				22B26225188F2A140007D0D4 /* UIKit.framework */,
 				22B261FF188F29750007D0D4 /* Foundation.framework */,
 				22B2620D188F29750007D0D4 /* XCTest.framework */,
+				228739981899C29300A88A1F /* CoreFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -227,6 +273,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		228739961899C29300A88A1F /* RWUIControlsResources */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 228739A11899C29300A88A1F /* Build configuration list for PBXNativeTarget "RWUIControlsResources" */;
+			buildPhases = (
+				228739931899C29300A88A1F /* Sources */,
+				228739941899C29300A88A1F /* Frameworks */,
+				228739951899C29300A88A1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RWUIControlsResources;
+			productName = RWUIControlsResources;
+			productReference = 228739971899C29300A88A1F /* RWUIControls.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 		22B261FB188F29750007D0D4 /* RWUIControls */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22B2621F188F29750007D0D4 /* Build configuration list for PBXNativeTarget "RWUIControls" */;
@@ -288,11 +351,22 @@
 				22B261FB188F29750007D0D4 /* RWUIControls */,
 				22B2620B188F29750007D0D4 /* RWUIControlsTests */,
 				22F3A8CD1891C1C20012391C /* Framework */,
+				228739961899C29300A88A1F /* RWUIControlsResources */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		228739951899C29300A88A1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				228739A51899C3D300A88A1F /* RWRibbon.png in Resources */,
+				2287399F1899C29300A88A1F /* InfoPlist.strings in Resources */,
+				228739A41899C3CF00A88A1F /* RWRibbon@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		22B2620A188F29750007D0D4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -337,6 +411,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		228739931899C29300A88A1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		22B261F8188F29750007D0D4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -359,6 +440,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		228739A71899C41E00A88A1F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 228739961899C29300A88A1F /* RWUIControlsResources */;
+			targetProxy = 228739A61899C41E00A88A1F /* PBXContainerItemProxy */;
+		};
 		22B26213188F29750007D0D4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22B261FB188F29750007D0D4 /* RWUIControls */;
@@ -372,6 +458,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		2287399D1899C29300A88A1F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2287399E1899C29300A88A1F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		22B26218188F29750007D0D4 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -383,6 +477,39 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		228739A21899C29300A88A1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RWUIControlsResources/RWUIControlsResources-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RWUIControlsResources/RWUIControlsResources-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = RWUIControls;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		228739A31899C29300A88A1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RWUIControlsResources/RWUIControlsResources-Prefix.pch";
+				INFOPLIST_FILE = "RWUIControlsResources/RWUIControlsResources-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = RWUIControls;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		22B2621D188F29750007D0D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -540,6 +667,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		228739A11899C29300A88A1F /* Build configuration list for PBXNativeTarget "RWUIControlsResources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				228739A21899C29300A88A1F /* Debug */,
+				228739A31899C29300A88A1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		22B261F7188F29750007D0D4 /* Build configuration list for PBXProject "RWUIControls" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

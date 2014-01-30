@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		228739901899BED100A88A1F /* RWRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2287398F1899BED100A88A1F /* RWRibbon.png */; };
-		228739921899BED800A88A1F /* RWRibbon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 228739911899BED800A88A1F /* RWRibbon@2x.png */; };
+		221C673E189B1B79006F5AE8 /* RWUIControls.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 228739AC1899C62500A88A1F /* RWUIControls.bundle */; };
 		22B26284188F31370007D0D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B26283188F31370007D0D4 /* Foundation.framework */; };
 		22B26286188F31370007D0D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B26285188F31370007D0D4 /* CoreGraphics.framework */; };
 		22B26288188F31370007D0D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B26287188F31370007D0D4 /* UIKit.framework */; };
@@ -27,6 +26,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		228739A81899C62500A88A1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22B262C1188F323C0007D0D4 /* RWUIControls.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 228739961899C29300A88A1F;
+			remoteInfo = RWUIControlsResources;
+		};
+		228739AB1899C62500A88A1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22B262C1188F323C0007D0D4 /* RWUIControls.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 228739971899C29300A88A1F;
+			remoteInfo = RWUIControlsResources;
+		};
 		22B262A6188F31370007D0D4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 22B26278188F31370007D0D4 /* Project object */;
@@ -58,8 +71,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2287398F1899BED100A88A1F /* RWRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RWRibbon.png; sourceTree = "<group>"; };
-		228739911899BED800A88A1F /* RWRibbon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RWRibbon@2x.png"; sourceTree = "<group>"; };
 		22B26280188F31370007D0D4 /* UIControlDevApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIControlDevApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B26283188F31370007D0D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22B26285188F31370007D0D4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -141,8 +152,6 @@
 		22B26289188F31370007D0D4 /* UIControlDevApp */ = {
 			isa = PBXGroup;
 			children = (
-				228739911899BED800A88A1F /* RWRibbon@2x.png */,
-				2287398F1899BED100A88A1F /* RWRibbon.png */,
 				22B262D0188F33CD0007D0D4 /* Main.storyboard */,
 				22B262CD188F33C00007D0D4 /* RWViewController.h */,
 				22B262CE188F33C00007D0D4 /* RWViewController.m */,
@@ -188,6 +197,7 @@
 			children = (
 				22B262C7188F323C0007D0D4 /* libRWUIControls.a */,
 				22B262C9188F323C0007D0D4 /* RWUIControlsTests.xctest */,
+				228739AC1899C62500A88A1F /* RWUIControls.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,6 +216,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				228739A91899C62500A88A1F /* PBXTargetDependency */,
 				22B262CB188F32890007D0D4 /* PBXTargetDependency */,
 			);
 			name = UIControlDevApp;
@@ -272,6 +283,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		228739AC1899C62500A88A1F /* RWUIControls.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RWUIControls.bundle;
+			remoteRef = 228739AB1899C62500A88A1F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		22B262C7188F323C0007D0D4 /* libRWUIControls.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -293,11 +311,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				228739901899BED100A88A1F /* RWRibbon.png in Resources */,
 				22B262D1188F33CD0007D0D4 /* Main.storyboard in Resources */,
-				228739921899BED800A88A1F /* RWRibbon@2x.png in Resources */,
 				22B2629C188F31370007D0D4 /* Images.xcassets in Resources */,
 				22B2628E188F31370007D0D4 /* InfoPlist.strings in Resources */,
+				221C673E189B1B79006F5AE8 /* RWUIControls.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +350,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		228739A91899C62500A88A1F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RWUIControlsResources;
+			targetProxy = 228739A81899C62500A88A1F /* PBXContainerItemProxy */;
+		};
 		22B262A7188F31370007D0D4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22B2627F188F31370007D0D4 /* UIControlDevApp */;

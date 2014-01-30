@@ -51,7 +51,7 @@
 #pragma mark - Util method
 - (void)addRibbonView
 {
-    UIImage *image = [UIImage imageNamed:@"RWRibbon"];
+    UIImage *image = [UIImage imageNamed:@"RWUIControls.bundle/RWRibbon"];
     self.ribbonView = [[UIImageView alloc] initWithImage:image];
     self.ribbonView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
     CGRect frame = self.ribbonView.frame;
