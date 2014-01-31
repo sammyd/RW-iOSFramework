@@ -11,7 +11,7 @@
 
 @interface RWViewController ()
     
-@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) RWRibbonView *imageContainer;
 @property (nonatomic, strong) RWKnobControl *rotationKnob;
 
 @end
@@ -25,10 +25,12 @@
     
     CGRect frame = self.view.bounds;
     frame.size.height *= 2/3.0;
-    self.imageView = [[UIImageView alloc] initWithFrame:CGRectInset(frame, 0, 20)];
-    self.imageView.image = [UIImage imageNamed:@"sampleImage.jpg"];
-    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    [self.view addSubview:self.imageView];
+    self.imageContainer = [[RWRibbonView alloc] initWithFrame:CGRectInset(frame, 20, 20)];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.imageContainer.bounds];
+    imageView.image = [UIImage imageNamed:@"sampleImage.jpg"];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.imageContainer addSubview:imageView];
+    [self.view addSubview:self.imageContainer];
     
     frame.origin.y += frame.size.height;
     frame.size.height /= 2;
@@ -50,7 +52,7 @@
 
 - (void)rotationAngleChanged:(id)sender
 {
-    self.imageView.transform = CGAffineTransformMakeRotation(self.rotationKnob.value);
+    self.imageContainer.transform = CGAffineTransformMakeRotation(self.rotationKnob.value);
 }
     
 - (NSUInteger)supportedInterfaceOrientations

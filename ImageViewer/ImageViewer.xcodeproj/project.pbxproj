@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221C6743189B2013006F5AE8 /* RWUIControls.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 221C6742189B2013006F5AE8 /* RWUIControls.bundle */; };
+		221C6747189B2264006F5AE8 /* RWUIControls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221C6746189B2264006F5AE8 /* RWUIControls.framework */; };
 		22B26243188F30080007D0D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B26242188F30080007D0D4 /* Foundation.framework */; };
 		22B26245188F30080007D0D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B26244188F30080007D0D4 /* CoreGraphics.framework */; };
 		22B26247188F30080007D0D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B26246188F30080007D0D4 /* UIKit.framework */; };
@@ -22,7 +24,6 @@
 		22B2626C188F30080007D0D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22B2626A188F30080007D0D4 /* InfoPlist.strings */; };
 		22B2626E188F30080007D0D4 /* ImageViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B2626D188F30080007D0D4 /* ImageViewerTests.m */; };
 		22F3A8D81891CBF90012391C /* sampleImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22F3A8D71891CBF90012391C /* sampleImage.jpg */; };
-		22F3A8DA1891CF360012391C /* RWUIControls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F3A8D91891CF360012391C /* RWUIControls.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		221C6742189B2013006F5AE8 /* RWUIControls.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RWUIControls.bundle; sourceTree = "<group>"; };
+		221C6746189B2264006F5AE8 /* RWUIControls.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RWUIControls.framework; sourceTree = "<group>"; };
 		22B2623F188F30080007D0D4 /* ImageViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B26242188F30080007D0D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22B26244188F30080007D0D4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -56,7 +59,6 @@
 		22B2626B188F30080007D0D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		22B2626D188F30080007D0D4 /* ImageViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageViewerTests.m; sourceTree = "<group>"; };
 		22F3A8D71891CBF90012391C /* sampleImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sampleImage.jpg; sourceTree = "<group>"; };
-		22F3A8D91891CF360012391C /* RWUIControls.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RWUIControls.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +67,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22B26245188F30080007D0D4 /* CoreGraphics.framework in Frameworks */,
-				22F3A8DA1891CF360012391C /* RWUIControls.framework in Frameworks */,
+				221C6747189B2264006F5AE8 /* RWUIControls.framework in Frameworks */,
 				22B26247188F30080007D0D4 /* UIKit.framework in Frameworks */,
 				22B26243188F30080007D0D4 /* Foundation.framework in Frameworks */,
 			);
@@ -106,7 +108,8 @@
 		22B26241188F30080007D0D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				22F3A8D91891CF360012391C /* RWUIControls.framework */,
+				221C6746189B2264006F5AE8 /* RWUIControls.framework */,
+				221C6742189B2013006F5AE8 /* RWUIControls.bundle */,
 				22B26242188F30080007D0D4 /* Foundation.framework */,
 				22B26244188F30080007D0D4 /* CoreGraphics.framework */,
 				22B26246188F30080007D0D4 /* UIKit.framework */,
@@ -247,6 +250,7 @@
 				22B2625B188F30080007D0D4 /* Images.xcassets in Resources */,
 				22B2624D188F30080007D0D4 /* InfoPlist.strings in Resources */,
 				22B26256188F30080007D0D4 /* Main.storyboard in Resources */,
+				221C6743189B2013006F5AE8 /* RWUIControls.bundle in Resources */,
 				22F3A8D81891CBF90012391C /* sampleImage.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +402,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
+					/Users/sam/dev/iOS/RayWenderlich/BuildAFramework/ImageViewer,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageViewer/ImageViewer-Prefix.pch";
@@ -415,6 +420,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
+					/Users/sam/dev/iOS/RayWenderlich/BuildAFramework/ImageViewer,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageViewer/ImageViewer-Prefix.pch";
