@@ -264,6 +264,112 @@ headers.
 
 ## Building a Framework
 
+You would be excused for thinking that when you started this tutorial you were
+promised a framework, and so far you've done a lot of work and there is no
+framework in sight. Well, this section will change that. The reason that you've
+got this far without doing anything towards creating a framework is that a
+framework is pretty much a static library and a collection of headers - exactly
+what you've built so far. There are a couple of things which make a framework
+special:
+
+1. The directory structure. Frameworks have a special directory structure which
+is recognized by Xcode. You will create a build task which will create this
+structure.
+2. The 'slices' in the static library. Currently, when the library is built, it
+is only built for the currently required architecture (i.e. i386, arm7 etc). In
+order for a framework to be useful it needs to include builds for all the
+architectures it needs to run on. You will create a new build product which
+will build the required architectures and place them in the framework.
+
+There is a quite a lot of scripting magic in this section, but bear with it -
+it's not nearly as complicated as it looks.
+
+
+### Framework Structure
+
+As mentioned previously, a framework has a special directory structure which
+looks like this:
+
+IMAGE OF FRAMEWORK DIRECTORY STRUCTURE
+
+To create this, you need to add a script which will create this as part of the
+static library build process. Select the __RWUIControls__ project in the
+Project Navigator, and select the __RWUIControls__ static library target.
+Choose the __Build Phases__ tab and add a new script by selecting __Editor >
+Add Build Phase > Add Run Script Build Phase__.
+
+![Create new run script build phase](img/add_run_script_build_phase.png)
+
+This creates a new panel in the build phases, which allows you to run an
+arbitrary script at some point during the build. You can change when the script
+runs by dragging the panel around in the list; for the framework project you
+want the script to be run last, so you can leave it where it is placed by
+default.
+
+![Blank run script phase](img/new_run_script_build_phase.png)
+
+Rename the script by double clicking on the panel title ("Run Script") and
+replacing it with "Build Framework".
+
+![Rename script](img/rename_script.png)
+
+Paste the following script in the script field:
+
+    set -e
+
+    export FRAMEWORK_LOCN="${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework"
+
+    # Create the path to the real Headers dir
+    mkdir -p "${FRAMEWORK_LOCN}/Versions/A/Headers"
+
+    # Create the required symlinks
+    /bin/ln -sfh A "${FRAMEWORK_LOCN}/Versions/Current"
+    /bin/ln -sfh Versions/Current/Headers "${FRAMEWORK_LOCN}/Headers"
+    /bin/ln -sfh "Versions/Current/${PRODUCT_NAME}" \
+                 "${FRAMEWORK_LOCN}/${PRODUCT_NAME}"
+
+    # Copy the public headers into the framework
+    /bin/cp -a "${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/" \
+               "${FRAMEWORK_LOCN}/Versions/A/Headers"
+
+This script first creates the __RWUIControls.framework/Versions/A/Headers__
+directory before then creating the 3 symlinks required for a framework:
+
+- __Versions/Current__ => __A__
+- __Headers__ => __Versions/Current/Headers__
+- __RWUIControls__ => __Versions/Current/RWUIControls__
+
+Finally, the public header files are copied into the __Versions/A/Headers__
+directory from the public headers path you specified before.
+
+Select the __RWUIControls__ static library scheme, and __iOS Device__ build
+target and build using __⌘ + B__.
+
+![Build static lib target](img/build_target_static_lib.png)
+
+Right click on the __libRWUIControls.a__ static library in the __Products__
+group of the __RWUIControls__ project, and select __Show In Finder__.
+
+![Static lib: show in finder](img/static_lib_show_in_finder.png)
+
+Within this build directory you can see the __RWUIControls.framework__, and you
+can confirm that the correct directory structure has been created and
+populated:
+
+![Created framework structure](img/created_framework_directory_structure.png)
+
+This is step along the path to completing a framework, but you'll notice that
+there there isn't a static lib in there yet - that's what you're going to sort
+next.
+
+
+
+### Multi-architecture Build
+
+iOS apps need to 
+
+
+
 
 ## How to use a framework
 
