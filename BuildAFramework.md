@@ -340,7 +340,9 @@ directory before then creating the 3 symlinks required for a framework:
 - __RWUIControls__ => __Versions/Current/RWUIControls__
 
 Finally, the public header files are copied into the __Versions/A/Headers__
-directory from the public headers path you specified before.
+directory from the public headers path you specified before. The __-a__
+argument ensures that the modified times are not changed as part of the copy,
+thereby preventing unnecessary rebuilds.
 
 Select the __RWUIControls__ static library scheme, and __iOS Device__ build
 target and build using __⌘ + B__.
@@ -366,7 +368,61 @@ next.
 
 ### Multi-architecture Build
 
-iOS apps need to 
+iOS apps need to run on a lot of different architectures:
+
+- __arm7__ Used in the oldest iOS7-supporting devices
+- __arm7s__ As used in iPhone 5 and 5C
+- __arm64__ For the 64-bit ARM processor in iPhone 5S
+- __i386__ For the 32-bit simulator
+- __x86_64__ Used in 64-bit simulator
+
+Each architecture requires a different binary, and when you build an app Xcode
+will build the correct architecture for whatever you're currently doing - i.e.
+if you've asked to run in the simulator then it'll only build the i386 version
+(or x86_64 for 64-bit). This means that builds are as fast as they can be. When
+you archive an app (or build in release mode) in preparation for upload to the
+app store, then Xcode will build for all 3 ARM architectures, allowing the app
+to be run on all possible devices.
+
+When you build your framework, you want developers using it to be able to use
+it for all the possible architectures, and therefore you need to make Xcode
+build for all 5 architectures. This process creates a so-called 'fat' binary,
+which contains a slice for each of the architectures.
+
+Note: This actually highlights another reason for using a dev app which has a
+dependency on the static library: the library will only be built for the
+architecture currently required for the dev app, and will actually only be
+rebuilt if something has changed. This means the development cycle is as quick
+as possible.
+
+The framework will be created using a new target in the __RWUIControls__
+project. To create it select the __RWUIControls__ project in the Project
+Navigator and then click the __Add Target__ button at the bottom of the
+existing targets.
+
+![Add Target Button](img/add_target_button.png)
+
+Navigate to __iOS > Other > Aggregate__, click next and name the target
+__Framework__.
+
+![Aggregate target](img/select_aggregate_target.png)
+
+To ensure that when this new framework target is built, the static library is
+built as well, then add a dependency on the static library target. Select the
+framework target in the library project and add a dependency in the __Build
+Phases__ tab.
+
+GIF IN HERE
+
+The main build part of this target is the multi-platform building, which you'll
+perform using a script. As you did before, create a new "Run Script" build
+phase by selecting the __Build Phases__ tab of the __Framework__ target, and
+clicking __Editor > Add Build Phase > Add Run Script Build Phase__.
+
+![Add build script to framework](img/framework_add_run_script_build_phase.png)
+
+Change the name of the script as before by double clicking on __Run Script__ -
+call it __MultiPlatform Build__.
 
 
 
