@@ -140,6 +140,18 @@ Note: as you continue to add new classes to your library, don't forget to keep
 the membership up-to-date. Make as few headers public as possible, and ensure
 that the remainder are in the _project_ group.
 
+The other thing that you need to do with your control's header file is add it
+to the library's main header file - __RWUIControls.h__. This means that a
+developer using your library just needs to include one file, and doesn't have
+to work out exactly which pieces she needs:
+
+    #import <RWUIControls/RWUIControls.h>
+
+Therefore, add the following to __RWUIControls.h__:
+
+    // Knob Control
+    #import <RWUIControls/RWKnobControl.h>
+
 ### Configuring Build Settings
 
 You are now very close to being able to build this project and create your
@@ -155,7 +167,7 @@ __RWUIControls__ static library target. Select the __Build Settings__ tab and
 then search for __"public headers"__. Double click on the __Public Headers
 Folder Path__ and enter the following:
 
-    $(PROJECT_NAME)Headers
+    include/$(PROJECT_NAME)
 
 ![Set the public header location](img/public_headers_path.png)
 
@@ -185,11 +197,69 @@ __Show in Finder__.
 ![Successful first build](img/successful_first_build.png)
 
 In this directory you can see the static library itself (__libRWUIControls.a__)
-and the directory you specified for the public header -
-__RWUIControlsHeaders__. Notice that the headers you made public exist in the
-folder as you would expect them to.
+and the directory you specified for the public headers - __include/RWUIControls__.
+Notice that the headers you made public exist in the folder as you would expect
+them to.
 
 ### Creating a dependent development project
+
+Developing a UI Controls library for iOS would be extremely difficult if you
+couldn't actually see what you were doing - which seems to be the case at the
+moment. Therefore, in this section you're going to create a new Xcode project,
+which will have a dependency on the library project, allowing you to develop
+the framework with a dev app. Crucially, the code for the dev app will be
+completely separate from the library itself, which makes for a lot cleaner
+structure.
+
+Begin by closing the static library project by clicking __File > Close
+Project__. Then create a new project with __File > New > Project__. Select
+__iOS > Application > Single View Application__, call the new project
+__UIControlDevApp__ and specify that it should be __iPhone__ only. Save the
+project in the same directory as you chose for __RWUIControls__.
+
+To add a dependency on the __RWUIControls__ library, drag
+__RWUIControls.xcodeproj__ from the Finder into the __UIControlDevApp__ group
+in Xcode.
+
+![Import Library into Dev App](img/import_library_into_dev_app.png)
+
+You can now navigate around the library project, inside the dev app project.
+This is perfect because it means that you can edit code inside the library and
+run up the dev app to check the changes.
+
+Note: You can't have the same project open in 2 different Xcode windows -
+therefore, if you're unable to navigate the library project check that you
+don't have it open elsewhere.
+
+Rather than recreate the dev app from the last tutorial, you can copy the same
+code in. First of all, select __Main.storyboard__, __RWViewController.h__ and
+__RWViewController.m__ and delete them by right clicking and selecting
+__Delete__. Then copy the the __DevApp__ folder from the zip you downloaded
+right into the __UIControlDevApp__ group in Xcode.
+
+INSERT_GIF_HERE
+
+To add a build dependency for the dev app on the static library, select the
+__UIControlDevApp__ project in the Project Navigator, and navigate to the
+__Build Phases__ tab of the __UIControlDevApp__ target. In the Project
+Navigator, navigate to the __Products__ group of the __RWUIControls__ project,
+and then drag __libRWUIControls.a__ from the Project Navigator into the __Link
+Binary With Libraries__ panel.
+
+INSERT_GIF_HERE
+
+Now you can finally build and run an app and see it in action. If you followed
+the previous tutorial on building a knob control, then you'll recognize the
+simple app that you've built.
+
+![First Build and run of dev app](img/dev_app_buildrun1.png)
+
+The beauty of using these nested projects like this is that you can continue to
+work on the library itself, without leaving the dev app project - whilst
+maintaining the code in different places. Each time you build the project
+you're also checking that you've got the public/project header membership set
+correctly, since the dev app will be unable to build if it is missing required
+headers.
 
 
 ## Building a Framework
