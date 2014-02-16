@@ -134,7 +134,7 @@ Alternatively, you might find it easier to change the membership in the
 __Target Membership__ panel when editing the file. This is likely to be more
 convenient as you continue to add and develop the library.
 
-![Selecting target membership](header_membership.png)
+![Selecting target membership](img/header_membership.png)
 
 Note: as you continue to add new classes to your library, don't forget to keep
 the membership up-to-date. Make as few headers public as possible, and ensure
@@ -352,7 +352,7 @@ target and build using __⌘ + B__.
 Right click on the __libRWUIControls.a__ static library in the __Products__
 group of the __RWUIControls__ project, and select __Show In Finder__.
 
-![Static lib: show in finder](img/static_lib_show_in_finder.png)
+![Static lib: show in finder](img/static_lib_view_in_finder.png)
 
 Within this build directory you can see the __RWUIControls.framework__, and you
 can confirm that the correct directory structure has been created and
