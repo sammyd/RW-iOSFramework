@@ -731,7 +731,7 @@ there. Click the __Add Target__ button, and then navigate to __OS X > Framework
 & Library > Bundle__. Call the bundle __RWUIControlsResources__ and make sure
 to select __Core Foundation__ from the framework selection box.
 
-GIF IN HERE add_bundle_target
+![Add bundle target](img/add_bundle_target.gif)
 
 There are a couple of build settings which need configuring since you're
 building a bundle for use in iOS as opposed to the default OSX. Select the
@@ -760,7 +760,7 @@ __Framework__ target, and then the __Build Phases__ tab. Expand the __Target
 Dependencies__ panel, click the __+__, and then select the
 __RWUIControlsResources__ target to add it as a dependency.
 
-GIF HERE add_bundle_as_framework_dependency
+![Add bundle as framework dependency](img/add_bundle_as_framework_dependency.gif)
 
 Open the __MultiPlatform Build__ panel, and add the following to the end of the
 script:
