@@ -789,7 +789,7 @@ Resources__ panel inside the __Build Phases__ tab. In the __Target
 Dependencies__ panel, click the __+__ to add a new dependency, and then select
 __RWUIControlsResources__.
 
-INSERT_GIF add_bundle_to_dev_project
+![Add bundle for dev project](add_bundle_to_dev_project.gif)
 
 
 ### Building a ribbon view
@@ -911,7 +911,7 @@ of a `RWRibbonView`.
 Build and run the app, and you'll see that you are now using both the
 __RWKnobControl__ and the __RWRibbonView__ from the __RWUIControls__ framework.
 
-INSERT_GIF image_viewer_with_ribbon
+![ImageViewer with Ribbon](img/image_viewer_with_ribbon.gif)
 
 
 ## Where To Go From Here?
