@@ -128,7 +128,7 @@ You want to share the main control header - __RWKnobControl.h__, and there are
 several ways you can do this. The first is to simply drag the file from the
 _project_ group to the _public_ group in the __Copy Headers__ panel.
 
-INSERT_GIF_HERE
+![Drag header to public](img/drag_header_to_public.gif)
 
 Alternatively, you might find it easier to change the membership in the
 __Target Membership__ panel when editing the file. This is likely to be more
