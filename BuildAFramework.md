@@ -568,7 +568,7 @@ at the end of the script:
           "${RW_OTHER_BUILT_PRODUCTS_DIR}/${RW_FRAMEWORK_NAME}.framework/Versions/A/${RW_FRAMEWORK_NAME}"
 
     # Copy the framework to the user's desktop
-    cp -a "${RW_FRAMEWORK_LOCATION}" "${HOME}/Desktop/${RW_FRAMEWORK_NAME}.framework"
+    ditto "${RW_FRAMEWORK_LOCATION}" "${HOME}/Desktop/${RW_FRAMEWORK_NAME}.framework"
 
 - The first command ensures that the framework in both platform build
 directories is the same, simply to reduce the potential confusion.
@@ -710,10 +710,211 @@ the value of the knob control will rotate the image.
 
 ## Using a bundle for resources
 
+You may have noticed that the __RWUIControls__ framework that you've built so
+far only consists of code and headers - i.e. you haven't used any other assets
+such as imagery. This is a limitation of a framework, in that it can only
+contain header files and a static library. In this section you'll learn how to
+use a bundle to collect assets, which can then be distributed alongside the
+framework itself.
+
+You're going to create a new UI control to be part of the __RWUIControls__
+library - a ribbon control. This will put an image of a ribbon on the top right
+hand corner of a `UIView`.
+
+
+### Creating a bundle
+
+The resources will be stored inside a __.bundle__ object, which takes the form
+of an additional target on the __RWUIControls__ project. Open the
+__UIControlDevApp__ project, and select the __RWUIControls__ project within
+there. Click the __Add Target__ button, and then navigate to __OS X > Framework
+& Library > Bundle__. Call the bundle __RWUIControlsResources__ and make sure
+to select __Core Foundation__ from the framework selection box.
+
+GIF IN HERE add_bundle_target
+
+There are a couple of build settings which need configuring since you're
+building a bundle for use in iOS as opposed to the default OSX. Select the
+__RWUIControlsResources__ target and then the __Build Settings__ tab. Search
+for __base sdk__, select the __Base SDK__ line and press __delete__. This will
+switch from OSX to iOS.
+
+![Remove the Base SDK override](img/bundle_set_base_sdk.png)
+
+You also need to change the product name to __RWUIControls__. Search this time
+for __bundle name__ and double click to edit. Replace __${TARGET_NAME}__ with
+__RWUIControls__.
+
+![Set bundle product name](img/bundle_set_product_name.png)
+
+By default images which have 2 resolutions (i.e. include an `@2x` version) will
+be combined into a multi-resolution TIFF, which is not what you want. Search
+for __hidpi__ and change the __COMBINE_HIDPI_IMAGES__ setting from __YES__ to
+__NO__.
+
+![Turn off HIDPI images merging](img/bundle_hipdi_images.png)
+
+In order that the bundle gets built whenever the framework gets built, then add
+it as a dependency to the __Framework__ aggregate target. Select the
+__Framework__ target, and then the __Build Phases__ tab. Expand the __Target
+Dependencies__ panel, click the __+__, and then select the
+__RWUIControlsResources__ target to add it as a dependency.
+
+GIF HERE add_bundle_as_framework_dependency
+
+Open the __MultiPlatform Build__ panel, and add the following to the end of the
+script:
+
+    # Copy the resources bundle to the user's desktop
+    ditto "${BUILT_PRODUCTS_DIR}/${RW_FRAMEWORK_NAME}.bundle" \
+          "${HOME}/Desktop/${RW_FRAMEWORK_NAME}.bundle"
+
+This command will copy the built bundle to the user's desktop in the same way
+that the framework gets copied. If you build the framework scheme now then
+you'll see that the bundle appears on the desktop.
+
+![Bundle on desktop](img/bundle_on_desktop.png)
+
 
 ### Importing the bundle into the dependent project
 
+In order to develop against this new bundle, you need to be able to use the
+bundle in the dev app. This means you must add it as both a dependency, and a
+object to copy across to the app.
+
+Select the __UIControlDevApp__ project in the Project Navigator, and then click
+on the __UIControlDevApp__ target. Expand the __Products__ group of the
+__RWUIControls__ project and drag __RWUIControls.bundle__ to the __Copy Bundle
+Resources__ panel inside the __Build Phases__ tab. In the __Target
+Dependencies__ panel, click the __+__ to add a new dependency, and then select
+__RWUIControlsResources__.
+
+INSERT_GIF add_bundle_to_dev_project
+
+
+### Building a ribbon view
+
+That's all the setup required - now you can go ahead and build a new control.
+Again, the code and imagery has been provided since that isn't the primary
+purpose of this tutorial. Drag the __RWRibbon__ directory from inside the zip
+file into the __RWUIControls__ group within the __RWUIControls__ project.
+
+![Drag RWRibbon into project](img/drag_rwribbon.png)
+
+Choose to __Copy the items into the destination group's folder__, and select
+that they are part of the __RWUIControls__ static lib target.
+
+![RWRibbon membership](img/rwribbon_membership.png)
+
+The only important part of the source code you've added is how you reference
+images. If you take a look at the `addRibbonView` method inside the
+__RWRibbonView.m__ file, then you'll see the relevant line:
+
+    UIImage *image = [UIImage imageNamed:@"RWUIControls.bundle/RWRibbon"];
+
+The important part is that the bundle behaves like a directory - so it's really
+simple to reference an image inside a bundle.
+
+To add the images to bundle, choose them in turn, and then, in the right hand
+panel, select that they should belong to the __RWUIControlsResources__ target.
+
+![RWRibbon Image membership](img/rwribbon_image_membership.png)
+
+The __RWRibbon.h__ header file needs to be exported as public, so select the
+file, and then choose __Public__ from the drop down menu in the __Target
+Membership__ panel.
+
+![RWRibbon Header membership](img/rwribbon_header_membership.png)
+
+Finally, since you've added a new control, add the header to the framework's
+header file. Open __RWUIControls.h__ and add the following lines:
+
+    // RWRibbon
+    #import <RWUIControls/RWRibbonView.h>
+
+
+### Adding the ribbon to the dev app
+
+Open __RWViewController.m__ in the __UIControlDevApp__ project, and add the
+following ivar between the curly braces in the `@interface` section:
+
+    RWRibbonView  *_ribbonView;
+
+And to actually create a ribbon view, add the following at the end of
+`viewDidLoad`:
+
+    // Creates a sample ribbon view
+    _ribbonView = [[RWRibbonView alloc] initWithFrame:self.ribbonViewContainer.bounds];
+    [self.ribbonViewContainer addSubview:_ribbonView];
+    // Need to check that it actually works :)
+    UIView *sampleView = [[UIView alloc] initWithFrame:_ribbonView.bounds];
+    sampleView.backgroundColor = [UIColor lightGrayColor];
+    [_ribbonView addSubview:sampleView];
+
+Build and run the the __UIControlDevApp__ scheme and you'll see the new ribbon
+control at the bottom of the app:
+
+![Dev app with ribbon](img/dev_app_with_ribbon.png)
+
+
+### Using the bundle in ImageViewer
+
+All that remains in this pretty extensive tutorial is to take a look at how to
+use this new bundle inside another app - the __ImageViewer__ app you built
+before.
+
+To start, make sure that your framework and bundle are up to date. Select the
+__Framework__ scheme and then press __⌘ + B__ to build it.
+
+Open up the __ImageViewer__ project, find the __RWUIControls.framework__ item
+inside the __Frameworks__ group and delete it, choosing to move it to the trash.
+Then, as before, drag the __RWUIControls.framework__ from your desktop to the
+__Frameworks__ group. This is necessary because the framework has changed since
+you first imported it.
+
+![Delete framework](img/delete_framework.png)
+
+To import the bundle, simply drag it from the desktop to the __ImageViewer__
+group. Choose to __Copy items into destination group's folder__ and ensure that
+it is added to the __ImageViewer__ target.
+
+![Import bundle](img/import_bundle.png)
+
+You're going to add the ribbon to the image which gets rotated, so there are a
+few simple changes to make to the code in __RWViewController.m__.
+
+Change the type of the `imageContainer` property from `UIImageView` to
+`RWRibbonView`:
+
+    @interface RWViewController ()
+        @property (nonatomic, strong) RWRibbonView *imageView;
+        @property (nonatomic, strong) RWKnobControl *rotationKnob;
+    @end
+
+Replace the first part of the `viewDidLoad` method, which before created the
+`UIImageView`, to the following:
+
+    [super viewDidLoad];
+    // Create UIImageView
+    CGRect frame = self.view.bounds;
+    frame.size.height *= 2/3.0;
+    self.imageView = [[RWRibbonView alloc] initWithFrame:CGRectInset(frame, 0, 20)];
+    UIImageView *iv = [[UIImageView alloc] initWithFrame:self.imageView.bounds];
+    iv.image = [UIImage imageNamed:@"sampleImage.jpg"];
+    iv.contentMode = UIViewContentModeScaleAspectFit;
+    [self.imageView addSubview:iv];
+    [self.view addSubview:self.imageView];
+
+This new code still created a `UIImageView`, but this now exists as a subview
+of a `RWRibbonView`.
+
+Build and run the app, and you'll see that you are now using both the
+__RWKnobControl__ and the __RWRibbonView__ from the __RWUIControls__ framework.
+
+INSERT_GIF image_viewer_with_ribbon
 
 
 ## Where To Go From Here?
+
+Who knows?
 
