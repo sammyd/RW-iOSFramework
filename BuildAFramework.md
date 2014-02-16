@@ -600,7 +600,111 @@ __arm7s__ and __arm64__, which is exactly what you set out to build. Had you
 run the `lipo -info` command beforehand then you would have seen a subset of
 these slices.
 
+
 ## How to use a framework
+
+You've put in a fair amount of work to build this framework, and you are yet to
+see what the point of it was. Well, that's what you'll discover in this
+section. One of the primary advantages in using a framework is its simplicity
+in use. You're going to create a simple iOS app which uses the
+__RWUIControls.framework__ that you've just built.
+
+Start by creating a new project in Xcode. Click __File > New > Project__ and
+select __iOS > Application > Single View Application__. Call your new app
+__ImageViewer__, set it for __iPhone__ only and save it in the same directory
+you've used for the previous two projects. This app will display an image and
+allow the user to change its rotation using a __RWKnobControl__.
+
+A sample image has been provided in the __ImageViewer__ directory of the zip
+file you downloaded. Drag __sampleImage.jpg__ from the finder into the __ImageViewer__
+group inside Xcode.
+
+![Drag sample image into Xcode](img/drag_sample_image_into_xcode.png)
+
+Ensure that the __Copy items into destination group's folder__ check box is
+checked, and click __Finish__ to complete the import.
+
+Importing a framework follows almost exactly the same process. Drag
+__RWUIControls.framework__ from the desktop into the __Frameworks__ group in
+Xcode. Again, ensure that __Copy items into destination group's folder__ is
+checked.
+
+GIF_IN_HERE
+
+
+Open up __RWViewController.m__ and replace the code with the following:
+
+    #import "RWViewController.h"
+    #import <RWUIControls/RWUIControls.h>
+
+    @interface RWViewController ()
+        @property (nonatomic, strong) UIImageView *imageView;
+        @property (nonatomic, strong) RWKnobControl *rotationKnob;
+    @end
+
+    @implementation RWViewController
+
+    - (void)viewDidLoad
+    {
+        [super viewDidLoad];
+        // Create UIImageView
+        CGRect frame = self.view.bounds;
+        frame.size.height *= 2/3.0;
+        self.imageView = [[UIImageView alloc] initWithFrame:CGRectInset(frame, 0, 20)];
+        self.imageView.image = [UIImage imageNamed:@"sampleImage.jpg"];
+        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        [self.view addSubview:self.imageView];
+        
+        // Create RWKnobControl
+        frame.origin.y += frame.size.height;
+        frame.size.height /= 2;
+        frame.size.width  = frame.size.height;
+        self.rotationKnob = [[RWKnobControl alloc] initWithFrame:CGRectInset(frame, 10, 10)];
+        CGPoint center = self.rotationKnob.center;
+        center.x = CGRectGetMidX(self.view.bounds);
+        self.rotationKnob.center = center;
+        [self.view addSubview:self.rotationKnob];
+        
+        // Set up config on RWKnobControl
+        self.rotationKnob.minimumValue = -M_PI_4;
+        self.rotationKnob.maximumValue = M_PI_4;
+        [self.rotationKnob addTarget:self
+                              action:@selector(rotationAngleChanged:)
+                    forControlEvents:UIControlEventValueChanged];
+    }
+        
+    - (void)rotationAngleChanged:(id)sender
+    {
+        self.imageView.transform = CGAffineTransformMakeRotation(self.rotationKnob.value);
+    }
+        
+    - (NSUInteger)supportedInterfaceOrientations
+    {
+        return UIInterfaceOrientationMaskPortrait;
+    }
+
+    @end
+
+This is a simple view controller which does the following:
+
+- Import the framework header with `#import <RWUIControls/RWUIControls.h>`.
+- Set up a couple of private properties to hold the `UIImageView` and the
+`RWKnobControl`.
+- Create a `UIImageView`, and use the __sampleImage__ that you added to the
+project before.
+- Create a `RWKnobControl` and position it appropriately.
+- Set some properties on the knob control, including setting the change event
+handler to be the `rotationAngleChanged:` method.
+- The `rotationAngleChanged:` method simply updates the `transform` property of
+the `UIImageView` so that the image rotates as the knob control is moved.
+
+For further details on how to use the `RWKnobControl` check out the previous
+tutorial, which explains how to create it.
+
+If you build and run this project you'll see a simple app, which as you change
+the value of the knob control will rotate the image.
+
+INSERT_GIF_HERE
 
 
 ## Using a bundle for resources
