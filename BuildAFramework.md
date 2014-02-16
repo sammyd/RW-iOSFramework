@@ -87,11 +87,13 @@ find __Editor > Add Build Phase > Add Copy Headers Build Phase__.
 Note: If this option is grayed out in the menu, then try clicking in the white
 area below the existing build phases to get the correct focus.
 
-INSERT GIF HERE
+![Add copy headers build phase](img/add_copy_headers_build_phase.gif)
 
 You can now add the __RWUIControls.h__ file to the public section of this new
 build phase by dragging it from the navigator to the public part of the panel.
 This will ensure that this header file is available for users of your library.
+
+![Add header to public](img/add_header_to_public.gif)
 
 Note: All the header files that are included in any of your public headers must
 also be made public. Otherwise you'll get compiler errors whilst attempting to
@@ -412,7 +414,7 @@ built as well, then add a dependency on the static library target. Select the
 framework target in the library project and add a dependency in the __Build
 Phases__ tab.
 
-GIF IN HERE
+![Add dependency to framework target](img/add_dependency_to_framework_target.gif)
 
 The main build part of this target is the multi-platform building, which you'll
 perform using a script. As you did before, create a new "Run Script" build
