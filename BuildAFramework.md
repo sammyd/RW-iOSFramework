@@ -71,7 +71,7 @@ target in then central pane. Click on __Build Phases__ and then expand the
 __Link Binary with Libraries__ section. Click the __+__ to add a new framework
 and navigate to find __UIKit__ before clicking add.
 
-INSERT GIF HERE
+![Add UIKit Dependency](img/add_uikit_dependency.gif)
 
 A static library is of no use unless it is combined with a selection of header
 files which can be used by the compiler as a manifest of what classes (and
@@ -239,7 +239,7 @@ __RWViewController.m__ and delete them by right clicking and selecting
 __Delete__. Then copy the the __DevApp__ folder from the zip you downloaded
 right into the __UIControlDevApp__ group in Xcode.
 
-INSERT_GIF_HERE
+![Adding files to dev app](img/adding_files_to_dev_app.gif)
 
 To add a build dependency for the dev app on the static library, select the
 __UIControlDevApp__ project in the Project Navigator, and navigate to the
@@ -248,7 +248,7 @@ Navigator, navigate to the __Products__ group of the __RWUIControls__ project,
 and then drag __libRWUIControls.a__ from the Project Navigator into the __Link
 Binary With Libraries__ panel.
 
-INSERT_GIF_HERE
+![Adding library dependency](img/adding_library_dependency.gif)
 
 Now you can finally build and run an app and see it in action. If you followed
 the previous tutorial on building a knob control, then you'll recognize the
@@ -631,8 +631,7 @@ __RWUIControls.framework__ from the desktop into the __Frameworks__ group in
 Xcode. Again, ensure that __Copy items into destination group's folder__ is
 checked.
 
-GIF_IN_HERE
-
+![Import Framework](img/import_framework.gif)
 
 Open up __RWViewController.m__ and replace the code with the following:
 
@@ -706,7 +705,7 @@ tutorial, which explains how to create it.
 If you build and run this project you'll see a simple app, which as you change
 the value of the knob control will rotate the image.
 
-INSERT_GIF_HERE
+![Image Viewer Rotating](img/image_viewer_rotating.gif)
 
 
 ## Using a bundle for resources
