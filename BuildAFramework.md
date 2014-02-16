@@ -1,12 +1,20 @@
 # How to create a framework for iOS
 
 
-In the last tutorial I wrote you learnt how to create a reusable knob control,
+In the last tutorial I wrote, you learnt how to create a reusable knob control,
 but it wasn't very clear exactly how you should reuse it. The simplest technique
 is to provide the source code files for developers to drop into their Xcode
-projects, but 
+projects, but this isn't particularly user-friendly. You could compile your
+code into a static library and pass this to the other developers - this can be
+dropped straight into a project, however it requires that you distribute a
+collection of header files as well. A framework offers a solution to this
+problem, as it packages up a static library with header files, in one
+easy-to-use package.
 
-WRITE THIS LATER
+In this tutorial you'll start right at the beginning - building a static
+library project in Xcode. From this you'll learn how to build an dev app which
+has a dependency on this library project, before discovering how to convert the
+static library project into a fully-fledged framework.
 
 
 ## Getting Started
@@ -789,7 +797,7 @@ Resources__ panel inside the __Build Phases__ tab. In the __Target
 Dependencies__ panel, click the __+__ to add a new dependency, and then select
 __RWUIControlsResources__.
 
-![Add bundle for dev project](add_bundle_to_dev_project.gif)
+![Add bundle for dev project](img/add_bundle_to_dev_project.gif)
 
 
 ### Building a ribbon view
@@ -916,5 +924,10 @@ __RWKnobControl__ and the __RWRibbonView__ from the __RWUIControls__ framework.
 
 ## Where To Go From Here?
 
-Who knows?
-
+In this tutorial you've learned everything you need to know about how to build
+a framework for use in iOS projects, including the best way to develop
+frameworks and how to use bundles to share assets. If there is some
+functionality that you find yourself using in lots of different apps then maybe
+you should think about creating a library make code reuse really easy? A
+framework offers an excellent way to collect a library of code together, and
+will allow you to drop your library in to any projects you wish.
