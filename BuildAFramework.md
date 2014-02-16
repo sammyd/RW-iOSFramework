@@ -424,8 +424,181 @@ clicking __Editor > Add Build Phase > Add Run Script Build Phase__.
 Change the name of the script as before by double clicking on __Run Script__ -
 call it __MultiPlatform Build__.
 
+Paste the following into the script text box:
+
+    set -e
+
+    # If we're already inside this script then die
+    if [ -n "$RW_MULTIPLATFORM_BUILD_IN_PROGRESS" ]; then
+      exit 0
+      fi
+    export RW_MULTIPLATFORM_BUILD_IN_PROGRESS=1
+
+    RW_FRAMEWORK_NAME=${PROJECT_NAME}
+    RW_INPUT_STATIC_LIB="lib${PROJECT_NAME}.a"
+    RW_FRAMEWORK_LOCATION="${BUILT_PRODUCTS_DIR}/${RW_FRAMEWORK_NAME}.framework"
+
+- `set -e` ensures that if any part of the script should fail then the entire
+script will fail. This makes sure that you don't end up with a partially-built
+framework.
+- Next, the `RW_MULTIPLATFORM_BUILD_IN_PROGRESS` variable is used to determine
+whether the script has been called recursively. If it has, then quit.
+- Then set up some variables - the framework name will be the same as the
+project i.e. __RWUIControls__, and the static lib that will be used is
+__libRWUIControls.a__.
+
+The next part of the script sets up some functions which will be used later on.
+Paste the following at the bottom of the script:
+
+    function build_static_library {
+        # Will rebuild the static library as specified
+        #     build_static_library sdk
+        xcrun xcodebuild -project "${PROJECT_FILE_PATH}" \
+                         -target "${TARGET_NAME}" \
+                         -configuration "${CONFIGURATION}" \
+                         -sdk "${1}" \
+                         ONLY_ACTIVE_ARCH=NO \
+                         BUILD_DIR="${BUILD_DIR}" \
+                         OBJROOT="${OBJROOT}" \
+                         BUILD_ROOT="${BUILD_ROOT}" \
+                         SYMROOT="${SYMROOT}" $ACTION
+    }
+
+    function make_fat_library {
+        # Will smash 2 static libs together
+        #     make_fat_library in1 in2 out
+        xcrun lipo -create "${1}" "${2}" -output "${3}"
+    }
+
+- `build_static_library` takes an __SDK__ as an argument (e.g. __iphoneos7.0__)
+and will build the static lib. Most of the arguments are passed directly from
+the current build job, the difference being that `ONLY_ACTIVE_ARCH` is set to
+ensure that all architectures are build for the current SDK.
+- `make_fat_library` uses `lipo` to join two static libraries into one. Its
+arguments are two input libraries followed by the desired output location.
+
+The next section of the script determines some more variables - in order to use
+the two methods. You need to know what the other SDK is (e.g. iphoneos7.0
+should go to iphonesimulator7.0 and vice versa), and to locate the build
+directory for that SDK. Paste the following at the end of the script:
+
+    # Extract the platform (iphoneos/iphonesimulator) from the SDK name
+    if [[ "$SDK_NAME" =~ ([A-Za-z]+) ]]; then
+      RW_SDK_PLATFORM=${BASH_REMATCH[1]}
+    else
+      echo "Could not find platform name from SDK_NAME: $SDK_NAME"
+      exit 1
+    fi
+
+    # Extract the version from the SDK
+    if [[ "$SDK_NAME" =~ ([0-9]+.*$) ]]; then
+      RW_SDK_VERSION=${BASH_REMATCH[1]}
+    else
+      echo "Could not find sdk version from SDK_NAME: $SDK_NAME"
+      exit 1
+    fi
+
+    # Determine the other platform
+    if [ "$RW_SDK_PLATFORM" == "iphoneos" ]; then
+      RW_OTHER_PLATFORM=iphonesimulator
+    else
+      RW_OTHER_PLATFORM=iphoneos
+    fi
+
+    # Find the build directory
+    if [[ "$BUILT_PRODUCTS_DIR" =~ (.*)$RW_SDK_PLATFORM$ ]]; then
+      RW_OTHER_BUILT_PRODUCTS_DIR="${BASH_REMATCH[1]}${RW_OTHER_PLATFORM}"
+    else
+      echo "Could not find other platform build directory."
+      exit 1
+    fi
+
+All four of these statements are very similar - using string comparison (and
+regex) to determine `RW_OTHER_PLATFORM` and `RW_OTHER_BUILT_PRODUCTS_DIR`. The
+four `if` statements in more detail:
+
+1. `SDK_NAME` will be of the form `iphoneos7.0` or `iphonesimulator6.1` (for
+example). This regex extracts the non-numeric characters at the beginning of
+this string, and hence will result in `iphoneos` or `iphonesimulator`.
+2. This regex pulls the numeric version number from the end of the `SDK_NAME`
+variable - i.e. `7.0` or `6.1` etc.
+3. Here a simple string comparison switches `iphonesimulator` for `iphoneos`
+and vice versa.
+4. Take the platform name from the end of the build products directory path,
+and replace it with the other platform. This ensures that the build directory
+for the other platform can be found. This will be used when joining the two
+static libraries.
+
+Now you can trigger the build for the other platform, and then join the
+resultant static libraries. Paste the following on the end of the script:
+
+    # Build the other platform.
+    build_static_library "${RW_OTHER_PLATFORM}${RW_SDK_VERSION}"
+
+    # If we're currently building for iphonesimulator, then need to rebuild
+    #   to ensure that we get both i386 and x86_64
+    if [ "$RW_SDK_PLATFORM" == "iphonesimulator" ]; then
+        build_static_library "${SDK_NAME}"
+    fi
 
 
+    # Join the 2 static libs into 1 and push into the .framework
+    make_fat_library "${BUILT_PRODUCTS_DIR}/${RW_INPUT_STATIC_LIB}" \
+                     "${RW_OTHER_BUILT_PRODUCTS_DIR}/${RW_INPUT_STATIC_LIB}" \
+                     "${RW_FRAMEWORK_LOCATION}/Versions/A/${RW_FRAMEWORK_NAME}"
+
+- First there's a call to build the other platform using the function you
+defined beforehand
+- If you're currently building for the simulator, then by default Xcode will
+only build the architecture that is currently required (e.g. __i386__ or
+__x86_64__). In order to build both architectures, this second call to
+`build_static_library` rebuilds with the `iphonesimulator` SDK, and ensures
+that both architectures are built.
+- Finally a call to `make_fat_library` joins the static lib in the current
+build directory with that in the other build directory to make the
+multi-architecture fat static library. This is placed inside the framework.
+
+The final commands of the script are simple copy commands. Paste the following
+at the end of the script:
+
+    # Ensure that the framework is present in both platorm's build directories
+    cp -a "${RW_FRAMEWORK_LOCATION}/Versions/A/${RW_FRAMEWORK_NAME}" \
+          "${RW_OTHER_BUILT_PRODUCTS_DIR}/${RW_FRAMEWORK_NAME}.framework/Versions/A/${RW_FRAMEWORK_NAME}"
+
+    # Copy the framework to the user's desktop
+    cp -a "${RW_FRAMEWORK_LOCATION}" "${HOME}/Desktop/${RW_FRAMEWORK_NAME}.framework"
+
+- The first command ensures that the framework in both platform build
+directories is the same, simply to reduce the potential confusion.
+- The second copies the completed framework to the user's desktop. This is an
+optional step, but I find that it's a lot easier to have the framework placed
+somewhere easily accessible.
+
+Select the __Framework__ aggregate scheme, and press __⌘ + B__ to build the
+framework.
+
+![Aggregate framework scheme](img/select_framework_aggregate_scheme.png)
+
+This will build and place a __RWUIControls.framework__ on your desktop.
+
+![Built framework on desktop](img/built_framework_on_desktop.png)
+
+In order to check that the multi-platform build has worked, fire up a terminal,
+and navigate to the framework on the desktop, as follows:
+
+    ➜  ~  cd Desktop/RWUIControls.framework
+    ➜  RWUIControls.framework  xcrun lipo -info RWUIControls
+
+The first command navigates into the framework itself, and then the second line
+uses the `lipo` command to get info on the __RWUIControls__ static library.
+This will list the slices present in the library.
+
+![Architectures in fat library](img/architectures_in_fat_library.png)
+
+You can see here that there are 5 slices - __i386__, __x86_64__, __arm7__,
+__arm7s__ and __arm64__, which is exactly what you set out to build. Had you
+run the `lipo -info` command beforehand then you would have seen a subset of
+these slices.
 
 ## How to use a framework
 
