@@ -752,7 +752,7 @@ be combined into a multi-resolution TIFF, which is not what you want. Search
 for __hidpi__ and change the __COMBINE_HIDPI_IMAGES__ setting from __YES__ to
 __NO__.
 
-![Turn off HIDPI images merging](img/bundle_hipdi_images.png)
+![Turn off HIDPI images merging](img/bundle_hidpi_images.png)
 
 In order that the bundle gets built whenever the framework gets built, then add
 it as a dependency to the __Framework__ aggregate target. Select the
