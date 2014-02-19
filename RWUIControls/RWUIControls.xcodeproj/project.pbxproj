@@ -14,6 +14,7 @@
 				2229C2C318B55E1800566C72 /* MultiPlatform Build */,
 			);
 			dependencies = (
+				2229C31B18B564F700566C72 /* PBXTargetDependency */,
 				2229C2C218B55D7000566C72 /* PBXTargetDependency */,
 			);
 			name = Framework;
@@ -38,6 +39,8 @@
 		2229C26318B54FBD00566C72 /* RWKnobRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2229C25D18B54FBD00566C72 /* RWKnobRenderer.m */; };
 		2229C26418B54FBD00566C72 /* RWRotationGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2229C25E18B54FBD00566C72 /* RWRotationGestureRecognizer.h */; };
 		2229C26518B54FBD00566C72 /* RWRotationGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2229C25F18B54FBD00566C72 /* RWRotationGestureRecognizer.m */; };
+		2229C30F18B5636300566C72 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2229C30E18B5636300566C72 /* CoreFoundation.framework */; };
+		2229C31518B5636300566C72 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2229C31318B5636300566C72 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2229C22B18B54E1400566C72;
 			remoteInfo = RWUIControls;
+		};
+		2229C31A18B564F700566C72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2229C22418B54E1400566C72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2229C30C18B5636300566C72;
+			remoteInfo = RWUIControlsResources;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -88,6 +98,11 @@
 		2229C25D18B54FBD00566C72 /* RWKnobRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWKnobRenderer.m; sourceTree = "<group>"; };
 		2229C25E18B54FBD00566C72 /* RWRotationGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWRotationGestureRecognizer.h; sourceTree = "<group>"; };
 		2229C25F18B54FBD00566C72 /* RWRotationGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWRotationGestureRecognizer.m; sourceTree = "<group>"; };
+		2229C30D18B5636300566C72 /* RWUIControls.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RWUIControls.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		2229C30E18B5636300566C72 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		2229C31218B5636300566C72 /* RWUIControlsResources-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RWUIControlsResources-Info.plist"; sourceTree = "<group>"; };
+		2229C31418B5636300566C72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2229C31618B5636300566C72 /* RWUIControlsResources-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RWUIControlsResources-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +126,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2229C30A18B5636300566C72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2229C30F18B5636300566C72 /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -119,6 +142,7 @@
 			children = (
 				2229C23118B54E1400566C72 /* RWUIControls */,
 				2229C24518B54E1400566C72 /* RWUIControlsTests */,
+				2229C31018B5636300566C72 /* RWUIControlsResources */,
 				2229C22E18B54E1400566C72 /* Frameworks */,
 				2229C22D18B54E1400566C72 /* Products */,
 			);
@@ -129,6 +153,7 @@
 			children = (
 				2229C22C18B54E1400566C72 /* libRWUIControls.a */,
 				2229C23C18B54E1400566C72 /* RWUIControlsTests.xctest */,
+				2229C30D18B5636300566C72 /* RWUIControls.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,6 +165,7 @@
 				2229C22F18B54E1400566C72 /* Foundation.framework */,
 				2229C23D18B54E1400566C72 /* XCTest.framework */,
 				2229C24018B54E1400566C72 /* UIKit.framework */,
+				2229C30E18B5636300566C72 /* CoreFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -191,6 +217,24 @@
 				2229C25F18B54FBD00566C72 /* RWRotationGestureRecognizer.m */,
 			);
 			path = RWKnobControl;
+			sourceTree = "<group>";
+		};
+		2229C31018B5636300566C72 /* RWUIControlsResources */ = {
+			isa = PBXGroup;
+			children = (
+				2229C31118B5636300566C72 /* Supporting Files */,
+			);
+			path = RWUIControlsResources;
+			sourceTree = "<group>";
+		};
+		2229C31118B5636300566C72 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2229C31218B5636300566C72 /* RWUIControlsResources-Info.plist */,
+				2229C31318B5636300566C72 /* InfoPlist.strings */,
+				2229C31618B5636300566C72 /* RWUIControlsResources-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +291,23 @@
 			productReference = 2229C23C18B54E1400566C72 /* RWUIControlsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		2229C30C18B5636300566C72 /* RWUIControlsResources */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2229C31718B5636300566C72 /* Build configuration list for PBXNativeTarget "RWUIControlsResources" */;
+			buildPhases = (
+				2229C30918B5636300566C72 /* Sources */,
+				2229C30A18B5636300566C72 /* Frameworks */,
+				2229C30B18B5636300566C72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RWUIControlsResources;
+			productName = RWUIControlsResources;
+			productReference = 2229C30D18B5636300566C72 /* RWUIControls.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -271,6 +332,7 @@
 				2229C22B18B54E1400566C72 /* RWUIControls */,
 				2229C23B18B54E1400566C72 /* RWUIControlsTests */,
 				2229C2BD18B55D5600566C72 /* Framework */,
+				2229C30C18B5636300566C72 /* RWUIControlsResources */,
 			);
 		};
 /* End PBXProject section */
@@ -281,6 +343,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2229C24A18B54E1400566C72 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2229C30B18B5636300566C72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2229C31518B5636300566C72 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,7 +383,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\n# If we're already inside this script then die\nif [ -n \"$RW_MULTIPLATFORM_BUILD_IN_PROGRESS\" ]; then\nexit 0\nfi\nexport RW_MULTIPLATFORM_BUILD_IN_PROGRESS=1\n\nRW_FRAMEWORK_NAME=${PROJECT_NAME}\nRW_INPUT_STATIC_LIB=\"lib${PROJECT_NAME}.a\"\nRW_FRAMEWORK_LOCATION=\"${BUILT_PRODUCTS_DIR}/${RW_FRAMEWORK_NAME}.framework\"\n\nfunction build_static_library {\n    # Will rebuild the static library as specified\n    #     build_static_library sdk\n    xcrun xcodebuild -project \"${PROJECT_FILE_PATH}\" \\\n    -target \"${TARGET_NAME}\" \\\n    -configuration \"${CONFIGURATION}\" \\\n    -sdk \"${1}\" \\\n    ONLY_ACTIVE_ARCH=NO \\\n    BUILD_DIR=\"${BUILD_DIR}\" \\\n    OBJROOT=\"${OBJROOT}\" \\\n    BUILD_ROOT=\"${BUILD_ROOT}\" \\\n    SYMROOT=\"${SYMROOT}\" $ACTION\n}\n\nfunction make_fat_library {\n    # Will smash 2 static libs together\n    #     make_fat_library in1 in2 out\n    xcrun lipo -create \"${1}\" \"${2}\" -output \"${3}\"\n}\n\n# Extract the platform (iphoneos/iphonesimulator) from the SDK name\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]; then\nRW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\n# Extract the version from the SDK\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]; then\nRW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\n# Determine the other platform\nif [ \"$RW_SDK_PLATFORM\" == \"iphoneos\" ]; then\nRW_OTHER_PLATFORM=iphonesimulator\nelse\nRW_OTHER_PLATFORM=iphoneos\nfi\n\n# Find the build directory\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$RW_SDK_PLATFORM$ ]]; then\nRW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${RW_OTHER_PLATFORM}\"\nelse\necho \"Could not find other platform build directory.\"\nexit 1\nfi\n\n\n# Build the other platform.\nbuild_static_library \"${RW_OTHER_PLATFORM}${RW_SDK_VERSION}\"\n\n# If we're currently building for iphonesimulator, then need to rebuild\n#   to ensure that we get both i386 and x86_64\nif [ \"$RW_SDK_PLATFORM\" == \"iphonesimulator\" ]; then\nbuild_static_library \"${SDK_NAME}\"\nfi\n\n# Join the 2 static libs into 1 and push into the .framework\nmake_fat_library \"${BUILT_PRODUCTS_DIR}/${RW_INPUT_STATIC_LIB}\" \\\n\"${RW_OTHER_BUILT_PRODUCTS_DIR}/${RW_INPUT_STATIC_LIB}\" \\\n\"${RW_FRAMEWORK_LOCATION}/Versions/A/${RW_FRAMEWORK_NAME}\"\n\n\n# Ensure that the framework is present in both platorm's build directories\ncp -a \"${RW_FRAMEWORK_LOCATION}/Versions/A/${RW_FRAMEWORK_NAME}\" \\\n\"${RW_OTHER_BUILT_PRODUCTS_DIR}/${RW_FRAMEWORK_NAME}.framework/Versions/A/${RW_FRAMEWORK_NAME}\"\n\n# Copy the framework to the user's desktop\nditto \"${RW_FRAMEWORK_LOCATION}\" \"${HOME}/Desktop/${RW_FRAMEWORK_NAME}.framework\"";
+			shellScript = "set -e\n\n# If we're already inside this script then die\nif [ -n \"$RW_MULTIPLATFORM_BUILD_IN_PROGRESS\" ]; then\nexit 0\nfi\nexport RW_MULTIPLATFORM_BUILD_IN_PROGRESS=1\n\nRW_FRAMEWORK_NAME=${PROJECT_NAME}\nRW_INPUT_STATIC_LIB=\"lib${PROJECT_NAME}.a\"\nRW_FRAMEWORK_LOCATION=\"${BUILT_PRODUCTS_DIR}/${RW_FRAMEWORK_NAME}.framework\"\n\nfunction build_static_library {\n    # Will rebuild the static library as specified\n    #     build_static_library sdk\n    xcrun xcodebuild -project \"${PROJECT_FILE_PATH}\" \\\n    -target \"${TARGET_NAME}\" \\\n    -configuration \"${CONFIGURATION}\" \\\n    -sdk \"${1}\" \\\n    ONLY_ACTIVE_ARCH=NO \\\n    BUILD_DIR=\"${BUILD_DIR}\" \\\n    OBJROOT=\"${OBJROOT}\" \\\n    BUILD_ROOT=\"${BUILD_ROOT}\" \\\n    SYMROOT=\"${SYMROOT}\" $ACTION\n}\n\nfunction make_fat_library {\n    # Will smash 2 static libs together\n    #     make_fat_library in1 in2 out\n    xcrun lipo -create \"${1}\" \"${2}\" -output \"${3}\"\n}\n\n# Extract the platform (iphoneos/iphonesimulator) from the SDK name\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]; then\nRW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\n# Extract the version from the SDK\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]; then\nRW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\n# Determine the other platform\nif [ \"$RW_SDK_PLATFORM\" == \"iphoneos\" ]; then\nRW_OTHER_PLATFORM=iphonesimulator\nelse\nRW_OTHER_PLATFORM=iphoneos\nfi\n\n# Find the build directory\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$RW_SDK_PLATFORM$ ]]; then\nRW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${RW_OTHER_PLATFORM}\"\nelse\necho \"Could not find other platform build directory.\"\nexit 1\nfi\n\n\n# Build the other platform.\nbuild_static_library \"${RW_OTHER_PLATFORM}${RW_SDK_VERSION}\"\n\n# If we're currently building for iphonesimulator, then need to rebuild\n#   to ensure that we get both i386 and x86_64\nif [ \"$RW_SDK_PLATFORM\" == \"iphonesimulator\" ]; then\nbuild_static_library \"${SDK_NAME}\"\nfi\n\n# Join the 2 static libs into 1 and push into the .framework\nmake_fat_library \"${BUILT_PRODUCTS_DIR}/${RW_INPUT_STATIC_LIB}\" \\\n\"${RW_OTHER_BUILT_PRODUCTS_DIR}/${RW_INPUT_STATIC_LIB}\" \\\n\"${RW_FRAMEWORK_LOCATION}/Versions/A/${RW_FRAMEWORK_NAME}\"\n\n\n# Ensure that the framework is present in both platorm's build directories\ncp -a \"${RW_FRAMEWORK_LOCATION}/Versions/A/${RW_FRAMEWORK_NAME}\" \\\n\"${RW_OTHER_BUILT_PRODUCTS_DIR}/${RW_FRAMEWORK_NAME}.framework/Versions/A/${RW_FRAMEWORK_NAME}\"\n\n# Copy the framework to the user's desktop\nditto \"${RW_FRAMEWORK_LOCATION}\" \"${HOME}/Desktop/${RW_FRAMEWORK_NAME}.framework\"\n\n# Copy the resources bundle to the user's desktop\nditto \"${BUILT_PRODUCTS_DIR}/${RW_FRAMEWORK_NAME}.bundle\" \\\n\"${HOME}/Desktop/${RW_FRAMEWORK_NAME}.bundle\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -336,6 +406,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2229C30918B5636300566C72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -349,6 +426,11 @@
 			target = 2229C22B18B54E1400566C72 /* RWUIControls */;
 			targetProxy = 2229C2C118B55D7000566C72 /* PBXContainerItemProxy */;
 		};
+		2229C31B18B564F700566C72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2229C30C18B5636300566C72 /* RWUIControlsResources */;
+			targetProxy = 2229C31A18B564F700566C72 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -356,6 +438,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				2229C24918B54E1400566C72 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2229C31318B5636300566C72 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2229C31418B5636300566C72 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -517,6 +607,41 @@
 			};
 			name = Release;
 		};
+		2229C31818B5636300566C72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RWUIControlsResources/RWUIControlsResources-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RWUIControlsResources/RWUIControlsResources-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = RWUIControls;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		2229C31918B5636300566C72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RWUIControlsResources/RWUIControlsResources-Prefix.pch";
+				INFOPLIST_FILE = "RWUIControlsResources/RWUIControlsResources-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = RWUIControls;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -552,6 +677,14 @@
 			buildConfigurations = (
 				2229C2BF18B55D5600566C72 /* Debug */,
 				2229C2C018B55D5600566C72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2229C31718B5636300566C72 /* Build configuration list for PBXNativeTarget "RWUIControlsResources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2229C31818B5636300566C72 /* Debug */,
+				2229C31918B5636300566C72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
