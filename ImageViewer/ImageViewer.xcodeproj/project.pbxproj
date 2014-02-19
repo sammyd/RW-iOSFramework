@@ -22,7 +22,8 @@
 		2229C2FA18B560F900566C72 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2229C2F818B560F900566C72 /* InfoPlist.strings */; };
 		2229C2FC18B560F900566C72 /* ImageViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2229C2FB18B560F900566C72 /* ImageViewerTests.m */; };
 		2229C30618B5610700566C72 /* sampleImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2229C30518B5610700566C72 /* sampleImage.jpg */; };
-		2229C30818B561EF00566C72 /* RWUIControls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2229C30718B561EF00566C72 /* RWUIControls.framework */; };
+		2229C32F18B56A7B00566C72 /* RWUIControls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2229C32E18B56A7B00566C72 /* RWUIControls.framework */; };
+		2229C33118B56A8F00566C72 /* RWUIControls.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2229C33018B56A8F00566C72 /* RWUIControls.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +57,8 @@
 		2229C2F918B560F900566C72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2229C2FB18B560F900566C72 /* ImageViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageViewerTests.m; sourceTree = "<group>"; };
 		2229C30518B5610700566C72 /* sampleImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sampleImage.jpg; sourceTree = "<group>"; };
-		2229C30718B561EF00566C72 /* RWUIControls.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RWUIControls.framework; sourceTree = "<group>"; };
+		2229C32E18B56A7B00566C72 /* RWUIControls.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RWUIControls.framework; sourceTree = "<group>"; };
+		2229C33018B56A8F00566C72 /* RWUIControls.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RWUIControls.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +67,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2229C2D318B560F900566C72 /* CoreGraphics.framework in Frameworks */,
-				2229C30818B561EF00566C72 /* RWUIControls.framework in Frameworks */,
+				2229C32F18B56A7B00566C72 /* RWUIControls.framework in Frameworks */,
 				2229C2D518B560F900566C72 /* UIKit.framework in Frameworks */,
 				2229C2D118B560F900566C72 /* Foundation.framework in Frameworks */,
 			);
@@ -106,7 +108,7 @@
 		2229C2CF18B560F900566C72 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2229C30718B561EF00566C72 /* RWUIControls.framework */,
+				2229C32E18B56A7B00566C72 /* RWUIControls.framework */,
 				2229C2D018B560F900566C72 /* Foundation.framework */,
 				2229C2D218B560F900566C72 /* CoreGraphics.framework */,
 				2229C2D418B560F900566C72 /* UIKit.framework */,
@@ -118,6 +120,7 @@
 		2229C2D618B560F900566C72 /* ImageViewer */ = {
 			isa = PBXGroup;
 			children = (
+				2229C33018B56A8F00566C72 /* RWUIControls.bundle */,
 				2229C30518B5610700566C72 /* sampleImage.jpg */,
 				2229C2DF18B560F900566C72 /* RWAppDelegate.h */,
 				2229C2E018B560F900566C72 /* RWAppDelegate.m */,
@@ -239,6 +242,7 @@
 				2229C2E918B560F900566C72 /* Images.xcassets in Resources */,
 				2229C2DB18B560F900566C72 /* InfoPlist.strings in Resources */,
 				2229C2E418B560F900566C72 /* Main.storyboard in Resources */,
+				2229C33118B56A8F00566C72 /* RWUIControls.bundle in Resources */,
 				2229C30618B5610700566C72 /* sampleImage.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,6 +481,7 @@
 				2229C30118B560F900566C72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2229C30218B560F900566C72 /* Build configuration list for PBXNativeTarget "ImageViewerTests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +490,7 @@
 				2229C30418B560F900566C72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

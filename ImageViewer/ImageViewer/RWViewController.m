@@ -10,9 +10,9 @@
 #import <RWUIControls/RWUIControls.h>
 
 @interface RWViewController ()
-    @property (nonatomic, strong) UIImageView *imageView;
+    @property (nonatomic, strong) RWRibbonView *imageView;
     @property (nonatomic, strong) RWKnobControl *rotationKnob;
-    @end
+@end
 
 @implementation RWViewController
     
@@ -22,9 +22,11 @@
         // Create UIImageView
         CGRect frame = self.view.bounds;
         frame.size.height *= 2/3.0;
-        self.imageView = [[UIImageView alloc] initWithFrame:CGRectInset(frame, 0, 20)];
-        self.imageView.image = [UIImage imageNamed:@"sampleImage.jpg"];
-        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        self.imageView = [[RWRibbonView alloc] initWithFrame:CGRectInset(frame, 0, 20)];
+        UIImageView *iv = [[UIImageView alloc] initWithFrame:self.imageView.bounds];
+        iv.image = [UIImage imageNamed:@"sampleImage.jpg"];
+        iv.contentMode = UIViewContentModeScaleAspectFit;
+        [self.imageView addSubview:iv];
         [self.view addSubview:self.imageView];
         
         // Create RWKnobControl
