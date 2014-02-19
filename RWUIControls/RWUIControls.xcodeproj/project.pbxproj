@@ -17,6 +17,12 @@
 		2229C24C18B54E1400566C72 /* RWUIControlsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2229C24B18B54E1400566C72 /* RWUIControlsTests.m */; };
 		2229C25618B54E6B00566C72 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2229C25518B54E6B00566C72 /* UIKit.framework */; };
 		2229C25818B54EAE00566C72 /* RWUIControls.h in Headers */ = {isa = PBXBuildFile; fileRef = 2229C23418B54E1400566C72 /* RWUIControls.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2229C26018B54FBD00566C72 /* RWKnobControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 2229C25A18B54FBD00566C72 /* RWKnobControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2229C26118B54FBD00566C72 /* RWKnobControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2229C25B18B54FBD00566C72 /* RWKnobControl.m */; };
+		2229C26218B54FBD00566C72 /* RWKnobRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2229C25C18B54FBD00566C72 /* RWKnobRenderer.h */; };
+		2229C26318B54FBD00566C72 /* RWKnobRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2229C25D18B54FBD00566C72 /* RWKnobRenderer.m */; };
+		2229C26418B54FBD00566C72 /* RWRotationGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2229C25E18B54FBD00566C72 /* RWRotationGestureRecognizer.h */; };
+		2229C26518B54FBD00566C72 /* RWRotationGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2229C25F18B54FBD00566C72 /* RWRotationGestureRecognizer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +60,12 @@
 		2229C24918B54E1400566C72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2229C24B18B54E1400566C72 /* RWUIControlsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWUIControlsTests.m; sourceTree = "<group>"; };
 		2229C25518B54E6B00566C72 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2229C25A18B54FBD00566C72 /* RWKnobControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWKnobControl.h; sourceTree = "<group>"; };
+		2229C25B18B54FBD00566C72 /* RWKnobControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWKnobControl.m; sourceTree = "<group>"; };
+		2229C25C18B54FBD00566C72 /* RWKnobRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWKnobRenderer.h; sourceTree = "<group>"; };
+		2229C25D18B54FBD00566C72 /* RWKnobRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWKnobRenderer.m; sourceTree = "<group>"; };
+		2229C25E18B54FBD00566C72 /* RWRotationGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWRotationGestureRecognizer.h; sourceTree = "<group>"; };
+		2229C25F18B54FBD00566C72 /* RWRotationGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWRotationGestureRecognizer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +125,7 @@
 		2229C23118B54E1400566C72 /* RWUIControls */ = {
 			isa = PBXGroup;
 			children = (
+				2229C25918B54FBD00566C72 /* RWKnobControl */,
 				2229C23418B54E1400566C72 /* RWUIControls.h */,
 				2229C23218B54E1400566C72 /* Supporting Files */,
 			);
@@ -145,6 +158,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2229C25918B54FBD00566C72 /* RWKnobControl */ = {
+			isa = PBXGroup;
+			children = (
+				2229C25A18B54FBD00566C72 /* RWKnobControl.h */,
+				2229C25B18B54FBD00566C72 /* RWKnobControl.m */,
+				2229C25C18B54FBD00566C72 /* RWKnobRenderer.h */,
+				2229C25D18B54FBD00566C72 /* RWKnobRenderer.m */,
+				2229C25E18B54FBD00566C72 /* RWRotationGestureRecognizer.h */,
+				2229C25F18B54FBD00566C72 /* RWRotationGestureRecognizer.m */,
+			);
+			path = RWKnobControl;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -153,6 +179,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2229C25818B54EAE00566C72 /* RWUIControls.h in Headers */,
+				2229C26018B54FBD00566C72 /* RWKnobControl.h in Headers */,
+				2229C26218B54FBD00566C72 /* RWKnobRenderer.h in Headers */,
+				2229C26418B54FBD00566C72 /* RWRotationGestureRecognizer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +267,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2229C26118B54FBD00566C72 /* RWKnobControl.m in Sources */,
+				2229C26518B54FBD00566C72 /* RWRotationGestureRecognizer.m in Sources */,
+				2229C26318B54FBD00566C72 /* RWKnobRenderer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
