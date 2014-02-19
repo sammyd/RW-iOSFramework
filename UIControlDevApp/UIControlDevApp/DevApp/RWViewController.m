@@ -11,6 +11,7 @@
 
 @interface RWViewController () {
     RWKnobControl *_knobControl;
+    RWRibbonView  *_ribbonView;
 }
 
 @end
@@ -33,6 +34,14 @@
     [_knobControl addTarget:self
                      action:@selector(handleValueChanged:)
            forControlEvents:UIControlEventValueChanged];
+    
+    // Creates a sample ribbon view
+    _ribbonView = [[RWRibbonView alloc] initWithFrame:self.ribbonViewContainer.bounds];
+    [self.ribbonViewContainer addSubview:_ribbonView];
+    // Need to check that it actually works :)
+    UIView *sampleView = [[UIView alloc] initWithFrame:_ribbonView.bounds];
+    sampleView.backgroundColor = [UIColor lightGrayColor];
+    [_ribbonView addSubview:sampleView];
 }
 
 - (void)didReceiveMemoryWarning

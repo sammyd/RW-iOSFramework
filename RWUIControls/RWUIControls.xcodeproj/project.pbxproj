@@ -41,6 +41,10 @@
 		2229C26518B54FBD00566C72 /* RWRotationGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2229C25F18B54FBD00566C72 /* RWRotationGestureRecognizer.m */; };
 		2229C30F18B5636300566C72 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2229C30E18B5636300566C72 /* CoreFoundation.framework */; };
 		2229C31518B5636300566C72 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2229C31318B5636300566C72 /* InfoPlist.strings */; };
+		2229C32818B5681700566C72 /* RWRibbonView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2229C32618B5681700566C72 /* RWRibbonView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2229C32918B5681700566C72 /* RWRibbonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2229C32718B5681700566C72 /* RWRibbonView.m */; };
+		2229C32A18B5683700566C72 /* RWRibbon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2229C32418B5681700566C72 /* RWRibbon.png */; };
+		2229C32B18B5683A00566C72 /* RWRibbon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2229C32518B5681700566C72 /* RWRibbon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +107,10 @@
 		2229C31218B5636300566C72 /* RWUIControlsResources-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RWUIControlsResources-Info.plist"; sourceTree = "<group>"; };
 		2229C31418B5636300566C72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2229C31618B5636300566C72 /* RWUIControlsResources-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RWUIControlsResources-Prefix.pch"; sourceTree = "<group>"; };
+		2229C32418B5681700566C72 /* RWRibbon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RWRibbon.png; sourceTree = "<group>"; };
+		2229C32518B5681700566C72 /* RWRibbon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RWRibbon@2x.png"; sourceTree = "<group>"; };
+		2229C32618B5681700566C72 /* RWRibbonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWRibbonView.h; sourceTree = "<group>"; };
+		2229C32718B5681700566C72 /* RWRibbonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWRibbonView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +181,7 @@
 		2229C23118B54E1400566C72 /* RWUIControls */ = {
 			isa = PBXGroup;
 			children = (
+				2229C32318B5681700566C72 /* RWRibbon */,
 				2229C25918B54FBD00566C72 /* RWKnobControl */,
 				2229C23418B54E1400566C72 /* RWUIControls.h */,
 				2229C23218B54E1400566C72 /* Supporting Files */,
@@ -237,6 +246,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2229C32318B5681700566C72 /* RWRibbon */ = {
+			isa = PBXGroup;
+			children = (
+				2229C32418B5681700566C72 /* RWRibbon.png */,
+				2229C32518B5681700566C72 /* RWRibbon@2x.png */,
+				2229C32618B5681700566C72 /* RWRibbonView.h */,
+				2229C32718B5681700566C72 /* RWRibbonView.m */,
+			);
+			path = RWRibbon;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -244,6 +264,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2229C32818B5681700566C72 /* RWRibbonView.h in Headers */,
 				2229C25818B54EAE00566C72 /* RWUIControls.h in Headers */,
 				2229C26018B54FBD00566C72 /* RWKnobControl.h in Headers */,
 				2229C26218B54FBD00566C72 /* RWKnobRenderer.h in Headers */,
@@ -350,6 +371,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2229C32A18B5683700566C72 /* RWRibbon.png in Resources */,
+				2229C32B18B5683A00566C72 /* RWRibbon@2x.png in Resources */,
 				2229C31518B5636300566C72 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2229C26118B54FBD00566C72 /* RWKnobControl.m in Sources */,
+				2229C32918B5681700566C72 /* RWRibbonView.m in Sources */,
 				2229C26518B54FBD00566C72 /* RWRotationGestureRecognizer.m in Sources */,
 				2229C26318B54FBD00566C72 /* RWKnobRenderer.m in Sources */,
 			);
