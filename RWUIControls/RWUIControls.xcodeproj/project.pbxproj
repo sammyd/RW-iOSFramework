@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2229C23018B54E1400566C72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2229C22F18B54E1400566C72 /* Foundation.framework */; };
+		2229C23518B54E1400566C72 /* RWUIControls.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2229C23418B54E1400566C72 /* RWUIControls.h */; };
+		2229C23E18B54E1400566C72 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2229C23D18B54E1400566C72 /* XCTest.framework */; };
+		2229C23F18B54E1400566C72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2229C22F18B54E1400566C72 /* Foundation.framework */; };
+		2229C24118B54E1400566C72 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2229C24018B54E1400566C72 /* UIKit.framework */; };
+		2229C24418B54E1400566C72 /* libRWUIControls.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2229C22C18B54E1400566C72 /* libRWUIControls.a */; };
+		2229C24A18B54E1400566C72 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2229C24818B54E1400566C72 /* InfoPlist.strings */; };
+		2229C24C18B54E1400566C72 /* RWUIControlsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2229C24B18B54E1400566C72 /* RWUIControlsTests.m */; };
+		2229C25618B54E6B00566C72 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2229C25518B54E6B00566C72 /* UIKit.framework */; };
+		2229C25818B54EAE00566C72 /* RWUIControls.h in Headers */ = {isa = PBXBuildFile; fileRef = 2229C23418B54E1400566C72 /* RWUIControls.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2229C24218B54E1400566C72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2229C22418B54E1400566C72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2229C22B18B54E1400566C72;
+			remoteInfo = RWUIControls;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2229C22A18B54E1400566C72 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				2229C23518B54E1400566C72 /* RWUIControls.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2229C22C18B54E1400566C72 /* libRWUIControls.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRWUIControls.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2229C22F18B54E1400566C72 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2229C23318B54E1400566C72 /* RWUIControls-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RWUIControls-Prefix.pch"; sourceTree = "<group>"; };
+		2229C23418B54E1400566C72 /* RWUIControls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWUIControls.h; sourceTree = "<group>"; };
+		2229C23C18B54E1400566C72 /* RWUIControlsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RWUIControlsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2229C23D18B54E1400566C72 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2229C24018B54E1400566C72 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		2229C24718B54E1400566C72 /* RWUIControlsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RWUIControlsTests-Info.plist"; sourceTree = "<group>"; };
+		2229C24918B54E1400566C72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2229C24B18B54E1400566C72 /* RWUIControlsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWUIControlsTests.m; sourceTree = "<group>"; };
+		2229C25518B54E6B00566C72 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2229C22918B54E1400566C72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2229C25618B54E6B00566C72 /* UIKit.framework in Frameworks */,
+				2229C23018B54E1400566C72 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2229C23918B54E1400566C72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2229C23E18B54E1400566C72 /* XCTest.framework in Frameworks */,
+				2229C24118B54E1400566C72 /* UIKit.framework in Frameworks */,
+				2229C24418B54E1400566C72 /* libRWUIControls.a in Frameworks */,
+				2229C23F18B54E1400566C72 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2229C22318B54E1400566C72 = {
+			isa = PBXGroup;
+			children = (
+				2229C23118B54E1400566C72 /* RWUIControls */,
+				2229C24518B54E1400566C72 /* RWUIControlsTests */,
+				2229C22E18B54E1400566C72 /* Frameworks */,
+				2229C22D18B54E1400566C72 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2229C22D18B54E1400566C72 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2229C22C18B54E1400566C72 /* libRWUIControls.a */,
+				2229C23C18B54E1400566C72 /* RWUIControlsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2229C22E18B54E1400566C72 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2229C25518B54E6B00566C72 /* UIKit.framework */,
+				2229C22F18B54E1400566C72 /* Foundation.framework */,
+				2229C23D18B54E1400566C72 /* XCTest.framework */,
+				2229C24018B54E1400566C72 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2229C23118B54E1400566C72 /* RWUIControls */ = {
+			isa = PBXGroup;
+			children = (
+				2229C23418B54E1400566C72 /* RWUIControls.h */,
+				2229C23218B54E1400566C72 /* Supporting Files */,
+			);
+			path = RWUIControls;
+			sourceTree = "<group>";
+		};
+		2229C23218B54E1400566C72 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2229C23318B54E1400566C72 /* RWUIControls-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2229C24518B54E1400566C72 /* RWUIControlsTests */ = {
+			isa = PBXGroup;
+			children = (
+				2229C24B18B54E1400566C72 /* RWUIControlsTests.m */,
+				2229C24618B54E1400566C72 /* Supporting Files */,
+			);
+			path = RWUIControlsTests;
+			sourceTree = "<group>";
+		};
+		2229C24618B54E1400566C72 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2229C24718B54E1400566C72 /* RWUIControlsTests-Info.plist */,
+				2229C24818B54E1400566C72 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2229C25718B54E9D00566C72 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2229C25818B54EAE00566C72 /* RWUIControls.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2229C22B18B54E1400566C72 /* RWUIControls */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2229C24F18B54E1400566C72 /* Build configuration list for PBXNativeTarget "RWUIControls" */;
+			buildPhases = (
+				2229C22818B54E1400566C72 /* Sources */,
+				2229C22918B54E1400566C72 /* Frameworks */,
+				2229C22A18B54E1400566C72 /* CopyFiles */,
+				2229C25718B54E9D00566C72 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RWUIControls;
+			productName = RWUIControls;
+			productReference = 2229C22C18B54E1400566C72 /* libRWUIControls.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		2229C23B18B54E1400566C72 /* RWUIControlsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2229C25218B54E1400566C72 /* Build configuration list for PBXNativeTarget "RWUIControlsTests" */;
+			buildPhases = (
+				2229C23818B54E1400566C72 /* Sources */,
+				2229C23918B54E1400566C72 /* Frameworks */,
+				2229C23A18B54E1400566C72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2229C24318B54E1400566C72 /* PBXTargetDependency */,
+			);
+			name = RWUIControlsTests;
+			productName = RWUIControlsTests;
+			productReference = 2229C23C18B54E1400566C72 /* RWUIControlsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2229C22418B54E1400566C72 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = RayWenderlich;
+			};
+			buildConfigurationList = 2229C22718B54E1400566C72 /* Build configuration list for PBXProject "RWUIControls" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2229C22318B54E1400566C72;
+			productRefGroup = 2229C22D18B54E1400566C72 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2229C22B18B54E1400566C72 /* RWUIControls */,
+				2229C23B18B54E1400566C72 /* RWUIControlsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2229C23A18B54E1400566C72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2229C24A18B54E1400566C72 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2229C22818B54E1400566C72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2229C23818B54E1400566C72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2229C24C18B54E1400566C72 /* RWUIControlsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2229C24318B54E1400566C72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2229C22B18B54E1400566C72 /* RWUIControls */;
+			targetProxy = 2229C24218B54E1400566C72 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2229C24818B54E1400566C72 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2229C24918B54E1400566C72 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2229C24D18B54E1400566C72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2229C24E18B54E1400566C72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2229C25018B54E1400566C72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/RWUIControls.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RWUIControls/RWUIControls-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2229C25118B54E1400566C72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/RWUIControls.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RWUIControls/RWUIControls-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		2229C25318B54E1400566C72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RWUIControls/RWUIControls-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RWUIControlsTests/RWUIControlsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		2229C25418B54E1400566C72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RWUIControls/RWUIControls-Prefix.pch";
+				INFOPLIST_FILE = "RWUIControlsTests/RWUIControlsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2229C22718B54E1400566C72 /* Build configuration list for PBXProject "RWUIControls" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2229C24D18B54E1400566C72 /* Debug */,
+				2229C24E18B54E1400566C72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2229C24F18B54E1400566C72 /* Build configuration list for PBXNativeTarget "RWUIControls" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2229C25018B54E1400566C72 /* Debug */,
+				2229C25118B54E1400566C72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2229C25218B54E1400566C72 /* Build configuration list for PBXNativeTarget "RWUIControlsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2229C25318B54E1400566C72 /* Debug */,
+				2229C25418B54E1400566C72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2229C22418B54E1400566C72 /* Project object */;
+}
