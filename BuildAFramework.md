@@ -300,7 +300,7 @@ it's not nearly as complicated as it looks.
 As mentioned previously, a framework has a special directory structure which
 looks like this:
 
-IMAGE OF FRAMEWORK DIRECTORY STRUCTURE
+![Framework directory structure](img/ios_framework_directory_structure.png)
 
 To create this, you need to add a script which will create this as part of the
 static library build process. Select the __RWUIControls__ project in the
