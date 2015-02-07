@@ -22,7 +22,7 @@
 		2229C2B418B5569B00566C72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2229C2B118B5569B00566C72 /* Main.storyboard */; };
 		2229C2B518B5569B00566C72 /* RWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2229C2B318B5569B00566C72 /* RWViewController.m */; };
 		2229C2BB18B557C100566C72 /* libRWUIControls.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2229C2AD18B555FA00566C72 /* libRWUIControls.a */; };
-		2229C32218B5676800566C72 /* RWUIControls.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 2229C32118B5675F00566C72 /* RWUIControls.bundle */; };
+		2229C32218B5676800566C72 /* RWUIControls.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2229C32118B5675F00566C72 /* RWUIControls.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,7 +102,6 @@
 				2229C27518B555CE00566C72 /* CoreGraphics.framework in Frameworks */,
 				2229C27718B555CE00566C72 /* UIKit.framework in Frameworks */,
 				2229C27318B555CE00566C72 /* Foundation.framework in Frameworks */,
-				2229C32218B5676800566C72 /* RWUIControls.bundle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2229C32218B5676800566C72 /* RWUIControls.bundle in Resources */,
 				2229C2B418B5569B00566C72 /* Main.storyboard in Resources */,
 				2229C28B18B555CE00566C72 /* Images.xcassets in Resources */,
 				2229C27D18B555CE00566C72 /* InfoPlist.strings in Resources */,
@@ -554,6 +554,7 @@
 				2229C2A318B555CE00566C72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2229C2A418B555CE00566C72 /* Build configuration list for PBXNativeTarget "UIControlDevAppTests" */ = {
 			isa = XCConfigurationList;
@@ -562,6 +563,7 @@
 				2229C2A618B555CE00566C72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
