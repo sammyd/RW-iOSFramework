@@ -22,8 +22,8 @@
 		2229C2FA18B560F900566C72 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2229C2F818B560F900566C72 /* InfoPlist.strings */; };
 		2229C2FC18B560F900566C72 /* ImageViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2229C2FB18B560F900566C72 /* ImageViewerTests.m */; };
 		2229C30618B5610700566C72 /* sampleImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2229C30518B5610700566C72 /* sampleImage.jpg */; };
-		2229C32F18B56A7B00566C72 /* RWUIControls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2229C32E18B56A7B00566C72 /* RWUIControls.framework */; };
 		2229C33118B56A8F00566C72 /* RWUIControls.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2229C33018B56A8F00566C72 /* RWUIControls.bundle */; };
+		3CA8E7DC26973D5800364F72 /* RWUIControls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2229C32E18B56A7B00566C72 /* RWUIControls.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +67,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2229C2D318B560F900566C72 /* CoreGraphics.framework in Frameworks */,
-				2229C32F18B56A7B00566C72 /* RWUIControls.framework in Frameworks */,
+				3CA8E7DC26973D5800364F72 /* RWUIControls.framework in Frameworks */,
 				2229C2D518B560F900566C72 /* UIKit.framework in Frameworks */,
 				2229C2D118B560F900566C72 /* Foundation.framework in Frameworks */,
 			);
@@ -220,6 +220,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -393,11 +394,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/sam/dev/iOS/RayWenderlich/BuildAFramework/ImageViewer,
+					"${PROJECT_DIR}/Framework",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageViewer/ImageViewer-Prefix.pch";
 				INFOPLIST_FILE = "ImageViewer/ImageViewer-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -410,11 +413,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/sam/dev/iOS/RayWenderlich/BuildAFramework/ImageViewer,
+					"${PROJECT_DIR}/Framework",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageViewer/ImageViewer-Prefix.pch";
 				INFOPLIST_FILE = "ImageViewer/ImageViewer-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
